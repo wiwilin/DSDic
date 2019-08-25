@@ -8,7 +8,7 @@ public class InitServer {
                 int port=1050;
                 String path="a.txt";
                 if(args.length==2) {
-                    System.out.println("port changed");
+                    System.out.println("port changed to "+port+", path changed to "+path);
                     port = Integer.parseInt(args[0]);
                     path = args[1];
                 }

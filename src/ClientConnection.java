@@ -20,8 +20,8 @@ public class ClientConnection {
         try {
                clientGUI = new ClientGUI();
                clientGUI.frame.setVisible(true);
-               clientGUI.lab_ip.setText(ip);
-               clientGUI.lab_port.setText(String.valueOf(port));
+               clientGUI.lab_ip.setText("ip: "+ip);
+               clientGUI.lab_port.setText("port: "+String.valueOf(port));
 
 
         }

@@ -3,6 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/InitServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/InitServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerListening.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ServerListening.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InitServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InitServer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +54,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.InitServer">
+  <component name="RunManager" selected="Application.InitClient">
     <configuration name="InitClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="InitClient" />
       <module name="DS" />
@@ -77,8 +86,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.InitServer" />
         <item itemvalue="Application.InitClient" />
+        <item itemvalue="Application.InitServer" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -93,7 +102,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566605924737</updated>
-      <workItem from="1566605996207" duration="37102000" />
+      <workItem from="1566605996207" duration="39941000" />
     </task>
     <servers />
   </component>

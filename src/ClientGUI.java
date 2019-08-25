@@ -46,7 +46,6 @@ public class ClientGUI{
         btn_send.addActionListener(e->{
 
             command=(String) box_comm.getSelectedItem();
-            System.out.println(command);
             vocabulary=text_voca.getText();
             explanation=text_explan.getText();
             send=true;
@@ -56,19 +55,21 @@ public class ClientGUI{
 
         });
 
-        text_info = new JTextArea("Welcome");
+        text_info = new JTextArea();
         text_info.setEditable(false);
 
-        lab_voca.setBounds(10, 20, 80, 20);
-        lab_explan.setBounds(10, 60, 80, 20);
-        lab_voca.setBounds(40, 20, 80, 20);
-        lab_explan.setBounds(40, 60, 80, 20);
-        text_voca.setBounds(120, 20, 120, 20);
-        text_explan.setBounds(120, 60, 120, 20);
-        box_comm.setBounds(260, 20, 100, 20);
-        btn_send.setBounds(260, 60, 80, 20);
-        text_info.setBounds(40, 100, 200, 50);
+        lab_ip.setBounds(270, 20, 80, 20);
+        lab_port.setBounds(40, 20, 80, 20);
+        lab_voca.setBounds(40, 50, 80, 20);
+        lab_explan.setBounds(40, 90, 80, 20);
+        text_voca.setBounds(120, 50, 120, 20);
+        text_explan.setBounds(120, 90, 120, 20);
+        box_comm.setBounds(260, 90, 100, 20);
+        btn_send.setBounds(265, 230, 80, 19);
+        text_info.setBounds(40, 130, 200, 120);
 
+        panel.add(lab_ip);
+        panel.add(lab_port);
         panel.add(lab_voca);
         panel.add(lab_explan);
         panel.add(text_voca);
