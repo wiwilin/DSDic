@@ -42,6 +42,7 @@ public class ClientGUI{
         String[] commandList = new String[]{"search", "delete", "add"};
         JComboBox box_comm = new JComboBox<String>(commandList);
 
+        JButton btn_clear = new JButton("clear");
         JButton btn_send = new JButton("send");
         btn_send.addActionListener(e->{
 
@@ -49,6 +50,7 @@ public class ClientGUI{
             vocabulary=text_voca.getText();
             explanation=text_explan.getText();
             send=true;
+
 
 
 
@@ -66,6 +68,7 @@ public class ClientGUI{
         text_explan.setBounds(120, 90, 120, 20);
         box_comm.setBounds(260, 90, 100, 20);
         btn_send.setBounds(265, 230, 80, 19);
+        btn_clear.setBounds(265, 190, 80, 19);
         text_info.setBounds(40, 130, 200, 120);
 
         panel.add(lab_ip);
@@ -76,6 +79,7 @@ public class ClientGUI{
         panel.add(text_explan);
         panel.add(box_comm);
         panel.add(btn_send);
+        panel.add(btn_clear);
         panel.add(text_info);
 
 

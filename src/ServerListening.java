@@ -12,6 +12,7 @@ public class ServerListening {
     private static int counter=0;
     private ExecutorService pool=null;
     public ServerGUI serverGUI;
+    public DicMap dicMap;
 
     public ServerListening(ServerGUI serverGUI){
        this.port=port;
@@ -36,11 +37,11 @@ public class ServerListening {
 
             while (true) {
 
-                Socket clientsocket = serversocket.accept();
+                Socket socket = serversocket.accept();
                 counter++;
                 serverGUI.text_log.append("client"+counter+"reply\n");
 
-                ConnectionThread thread=new ConnectionThread(clientsocket,counter,serverGUI);
+                ConnectionThread thread=new ConnectionThread(socket,counter,serverGUI,dicMap);
                 excutor.exec(thread);
 
 

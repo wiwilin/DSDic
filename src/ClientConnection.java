@@ -13,10 +13,10 @@ public class ClientConnection {
     public  DataInputStream input;
     public DataOutputStream output;
 
-    public ClientConnection(){
+    public ClientConnection() throws IOException {
         connect();
     }
-    public void connect(){
+    public void connect() throws IOException {
         try {
                clientGUI = new ClientGUI();
                clientGUI.frame.setVisible(true);
@@ -27,8 +27,9 @@ public class ClientConnection {
         }
         catch (Exception e){}
 
-        try(Socket socket = new Socket(ip, port);)
+        try
         {
+            Socket socket = new Socket(ip, port);
             // Output and Input Stream
             input = new DataInputStream(socket.getInputStream());
             output = new DataOutputStream(socket.getOutputStream());
@@ -40,28 +41,28 @@ public class ClientConnection {
                 }
 
 
-                while (true && input.available() > 0) {
+                while (true && input.available() > 0&&clientGUI.send==false) {
                     String message = input.readUTF();
-                    clientGUI.text_info.setText(message);
+                    clientGUI.text_info.append(message);
                 }
+
             }
 
-        }
-        catch (UnknownHostException e)
-        {
+
+
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+
     }
     public void sendData() throws IOException {
 
         String sendData =clientGUI.command+","+clientGUI.vocabulary+","+clientGUI.explanation;
         output.writeUTF(sendData);
         clientGUI.text_info.setText("Data sent to Server--> " + sendData+"\n");
-        //output.flush();
+        output.flush();
 
     }
 

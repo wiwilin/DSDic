@@ -16,10 +16,11 @@ public class ConnectionThread implements Runnable {
     public DicMap dicMap;
 
 
-    public ConnectionThread(Socket socket, int counter, ServerGUI serverGUI) {
+    public ConnectionThread(Socket socket, int counter, ServerGUI serverGUI,DicMap dicMap) {
         this.socket = socket;
         this.counter = counter;
         this.serverGUI = serverGUI;
+        this.dicMap=dicMap;
 
     }
 
@@ -36,7 +37,7 @@ public class ConnectionThread implements Runnable {
                 //JSONObject js=new JSONObject(input.readUTF)
                 serverGUI.text_log.append(str);
                 executeCommand(str);
-                // output.writeUTF("reply by server:Hi Client"+counter+"!\n");
+                output.writeUTF("reply by server:Hi Client"+counter+"!\n");
                 System.out.println(dicMap.searchWord("a"));
 
             }
@@ -68,10 +69,11 @@ public class ConnectionThread implements Runnable {
         }
     }
     public void writeArrayList(ArrayList list) throws IOException {
-        for(int i=0; i<list.size(); i++){
+        /*for(int i=0; i<list.size(); i++){
             String str= (String) list.get(i);
             output.writeUTF(str);
-        }
+        }*/
+        output.writeUTF("an explan");
     }
 
 

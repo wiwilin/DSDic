@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DicMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThreadExcutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JsonFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnectionThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DicOperate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InitServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InitServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DicMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DicMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ServerListening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerListening.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -107,7 +110,7 @@
       <workItem from="1566770147543" duration="3545000" />
       <workItem from="1566861976540" duration="730000" />
       <workItem from="1567311478170" duration="2499000" />
-      <workItem from="1567419627105" duration="7988000" />
+      <workItem from="1567419627105" duration="12150000" />
     </task>
     <task id="LOCAL-00001" summary="GUI changed">
       <created>1566731184371</created>
@@ -123,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567431286961</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="thread pool">
+      <created>1567438004230</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1567438004230</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +155,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="GUI changed" />
     <MESSAGE value="File change" />
-    <option name="LAST_COMMIT_MESSAGE" value="File change" />
+    <MESSAGE value="thread pool" />
+    <option name="LAST_COMMIT_MESSAGE" value="thread pool" />
   </component>
 </project>

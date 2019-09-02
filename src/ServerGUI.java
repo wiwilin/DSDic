@@ -16,10 +16,12 @@ public class ServerGUI {
 
     private static int counter=0;
     private ExecutorService pool=null;
+    public DicMap dicMap;
 
     public ServerGUI(int port, String path){
         this.port=port;
         this.path=path;
+        dicMap=new DicMap();
         initialize();
     }
     public void initialize(){
@@ -60,7 +62,7 @@ public class ServerGUI {
 
     public void listen() {
 
-        pool= Executors.newFixedThreadPool(10);
+        ThreadExcutor excutor = new ThreadExcutor(10);
 
 
         ServerSocketFactory factory = ServerSocketFactory.getDefault();
@@ -77,8 +79,8 @@ public class ServerGUI {
                 counter++;
                 text_log.append("client"+counter+" connected\n");
 
-                ConnectionThread thread=new ConnectionThread(clientsocket,counter,this);
-                pool.execute(thread);
+                ConnectionThread thread=new ConnectionThread(clientsocket,counter,this,dicMap);
+                excutor.exec(thread);
 
 
             }

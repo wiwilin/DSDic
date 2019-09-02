@@ -22,7 +22,7 @@ public class DicMap extends HashMap{
     }
     public void addWord(String word,String meaning) throws Exception{
         if(dicMap!=null) {
-            if (dicMap.containsKey(word))
+            if (containsWord(word))
                 throw new Exception(word + " is already added");
         }
         ArrayList meanings = new ArrayList();
