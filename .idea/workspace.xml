@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DicOperate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DicMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ThreadExcutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ConnectionThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/InitClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/InitServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerGUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerListening.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnectionThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DicOperate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InitServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InitServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerListening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerListening.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.InitServer">
+  <component name="RunManager" selected="Application.InitClient">
     <configuration name="InitClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="InitClient" />
       <module name="DS" />
@@ -92,8 +87,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.InitServer" />
         <item itemvalue="Application.InitClient" />
+        <item itemvalue="Application.InitServer" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -112,7 +107,7 @@
       <workItem from="1566770147543" duration="3545000" />
       <workItem from="1566861976540" duration="730000" />
       <workItem from="1567311478170" duration="2499000" />
-      <workItem from="1567419627105" duration="3236000" />
+      <workItem from="1567419627105" duration="7988000" />
     </task>
     <task id="LOCAL-00001" summary="GUI changed">
       <created>1566731184371</created>
@@ -121,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566731184372</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="File change">
+      <created>1567431286961</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1567431286961</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +144,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="GUI changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI changed" />
+    <MESSAGE value="File change" />
+    <option name="LAST_COMMIT_MESSAGE" value="File change" />
   </component>
 </project>

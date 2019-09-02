@@ -23,7 +23,7 @@ public class ServerListening {
 
     public void listen() {
 
-        pool= Executors.newFixedThreadPool(10);
+        ThreadExcutor excutor = new ThreadExcutor(10);
 
 
         ServerSocketFactory factory = ServerSocketFactory.getDefault();
@@ -41,7 +41,7 @@ public class ServerListening {
                 serverGUI.text_log.append("client"+counter+"reply\n");
 
                 ConnectionThread thread=new ConnectionThread(clientsocket,counter,serverGUI);
-                pool.execute(thread);
+                excutor.exec(thread);
 
 
             }
