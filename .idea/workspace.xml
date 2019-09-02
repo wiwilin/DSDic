@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DicOperate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/InitServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/InitServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerListening.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ServerListening.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ConnectionThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/InitClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/InitServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerListening.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InitServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InitServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnectionThread.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +43,10 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -54,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.InitClient">
+  <component name="RunManager" selected="Application.InitServer">
     <configuration name="InitClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="InitClient" />
       <module name="DS" />
@@ -86,8 +92,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.InitClient" />
         <item itemvalue="Application.InitServer" />
+        <item itemvalue="Application.InitClient" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -102,8 +108,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566605924737</updated>
-      <workItem from="1566605996207" duration="39941000" />
+      <workItem from="1566605996207" duration="56537000" />
+      <workItem from="1566770147543" duration="3545000" />
+      <workItem from="1566861976540" duration="730000" />
+      <workItem from="1567311478170" duration="2499000" />
+      <workItem from="1567419627105" duration="3236000" />
     </task>
+    <task id="LOCAL-00001" summary="GUI changed">
+      <created>1566731184371</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566731184372</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,10 +132,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="GUI changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI changed" />
   </component>
 </project>
