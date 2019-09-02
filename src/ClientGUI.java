@@ -50,11 +50,12 @@ public class ClientGUI{
             vocabulary=text_voca.getText();
             explanation=text_explan.getText();
             send=true;
+        });
+        btn_clear.addActionListener(e->{
 
-
-
-
-
+            text_voca.setText("");
+            text_explan.setText("");
+            text_info.setText("");
         });
 
         text_info = new JTextArea();

@@ -61,7 +61,7 @@ public class ClientConnection {
 
         String sendData =clientGUI.command+","+clientGUI.vocabulary+","+clientGUI.explanation;
         output.writeUTF(sendData);
-        clientGUI.text_info.setText("Data sent to Server--> " + sendData+"\n");
+        clientGUI.text_info.append("Data sent to Server--> " + sendData+"\n");
         output.flush();
 
     }

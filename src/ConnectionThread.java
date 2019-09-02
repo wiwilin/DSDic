@@ -33,11 +33,14 @@ public class ConnectionThread implements Runnable {
             output = new DataOutputStream(socket.getOutputStream());
 
             while (true) {
-                String str = input.readUTF();
-                //JSONObject js=new JSONObject(input.readUTF)
-                serverGUI.text_log.append(str);
+                String str=null;
+                while ((str=input.readUTF())!= null) {
+                    serverGUI.text_log.append(str+"\n");
+                }
+
                 executeCommand(str);
                 output.writeUTF("reply by server:Hi Client"+counter+"!\n");
+                output.flush();
                 System.out.println(dicMap.searchWord("a"));
 
             }
@@ -51,7 +54,7 @@ public class ConnectionThread implements Runnable {
         String command = str[0];
         String word=str[1];
         String meaning=str[2];
-
+        System.out.println("command:"+command+"word:"+word+"meaning"+meaning);
         switch (command) {
             case "search":
                 writeArrayList(dicMap.searchWord(word));
