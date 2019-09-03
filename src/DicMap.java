@@ -1,13 +1,16 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class DicMap extends HashMap{
     public static HashMap<String,ArrayList> dicMap;
     public DicMap(){
         dicMap = new HashMap<String, ArrayList>();
-        ArrayList list = new ArrayList();
+        ArrayList list = new ArrayList<String>();
         list.add("value");
         dicMap.put("key",list);
+
 
     }
     private boolean containsWord(String word){
@@ -30,6 +33,7 @@ public class DicMap extends HashMap{
         try{
             dicMap.putIfAbsent(word,meanings);
         }catch (Exception e){}
+        System.out.println("added"+word);
     }
     public void addMeaning(String word,String meaning)throws Exception{
         if (!dicMap.containsKey(word))
@@ -54,7 +58,18 @@ public class DicMap extends HashMap{
         }catch (Exception e){}
 
     }
+    public void printDicMap(){
+        System.out.println("\n");
+        Iterator iter = dicMap.entrySet().iterator();
+        while (iter.hasNext()) {
+            Map.Entry entry = (Map.Entry) iter.next();
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            System.out.println(key + ":" + value);
 
+        }
+
+    }
 
 
 

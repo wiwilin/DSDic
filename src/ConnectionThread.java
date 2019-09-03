@@ -6,6 +6,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
 
 public class ConnectionThread implements Runnable {
     private Socket socket = null;
@@ -16,11 +17,11 @@ public class ConnectionThread implements Runnable {
     public DicMap dicMap;
 
 
-    public ConnectionThread(Socket socket, int counter, ServerGUI serverGUI, DicMap dicMap) {
+    public ConnectionThread(Socket socket, int counter, ServerGUI serverGUI) {
         this.socket = socket;
         this.counter = counter;
         this.serverGUI = serverGUI;
-        this.dicMap = dicMap;
+        this.dicMap = serverGUI.dicMap;
 
     }
 
@@ -36,19 +37,22 @@ public class ConnectionThread implements Runnable {
 
 
             while (true) {
-                serverGUI.text_ter.append("88");
+
                 while (k == true && (str = input.readUTF()) != "") {
-                    serverGUI.text_log.append(str + "\n");
+
+                    //serverGUI.text_log.append(str + "\n");
+
                     k = false;
-                    serverGUI.text_ter.append("k=false");
+                    //serverGUI.text_ter.append("k=false");
                 }
                 while (k == false) {
-                    serverGUI.text_ter.append("out");
-                    //executeCommand(str);
-                    output.writeUTF("Hi" + counter+ str + "!\n");
+                    //serverGUI.text_ter.append("out");
+
+                    String info = executeCommand(str);
+                    output.writeUTF(info);
                     output.flush();
-                    k=true;
-                    serverGUI.text_ter.append("down");
+                    k = true;
+                    //serverGUI.text_ter.append("down");
                     // System.out.println(dicMap.searchWord("a"));}
 
                 }
@@ -56,38 +60,64 @@ public class ConnectionThread implements Runnable {
 
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
-        public synchronized void executeCommand(String com){
-        /*
-            String[] star = com.split(",");
-            String command = star[0];
-            String word = star[1];
-            String meaning = star[2];
-            System.out.println("command:" + command + "word:" + word + "meaning" + meaning);
+
+    public synchronized String executeCommand(String com) {
+
+        String[] star = com.split(",");
+        String command = star[0];
+        String word = star[1];
+        String meaning;
+        try {
+            meaning = star[2];
+        } catch (Exception e) {
+            meaning = "";
+        }
+        //System.out.println("command:" + command + "word:" + word + "meaning" + meaning);
+        String msg=command+" "+meaning+" to "+word;
+        serverGUI.text_ter.append("received from Client "+counter+" "+msg);
+        try {
             switch (command) {
                 case "search":
-                    writeArrayList(dicMap.searchWord(word));
-                    break;
+                    String meanings = writeArrayList(dicMap.searchWord(word));
+                    return meanings;
                 case "add":
                     dicMap.addWord(word, meaning);
-                    break;
+                    return "added";
                 case "delete":
                     dicMap.deleteWord(word);
-                    break;
+                    return "deleted";
                 case "kill":
-                    break;
+                    return "kill";
                 default:
                     throw new IllegalStateException("Unexpected value: " + star[0]);
             }
-         */
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-        public void writeArrayList (ArrayList list)  {
-        /*for(int i=0; i<list.size(); i++){
-            String str= (String) list.get(i);
-            output.writeUTF(str);
-        }*/
-        }
+        return "ok";
+    }
 
+
+
+    public String writeArrayList(ArrayList list) {
+
+        String str = "";
+        serverGUI.text_log.setText("ok");
+        for (int i = 0; i < list.size(); i++) {
+
+            {
+                str+="&";
+                str+=list.get(i);
+
+            }
+
+        }
+        return str;
+
+    }
 }
 

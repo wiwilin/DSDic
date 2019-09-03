@@ -41,7 +41,7 @@ public class ServerListening {
                 counter++;
                 serverGUI.text_log.append("client"+counter+"reply\n");
 
-                ConnectionThread thread=new ConnectionThread(socket,counter,serverGUI,dicMap);
+                ConnectionThread thread=new ConnectionThread(socket,counter,serverGUI);
                 excutor.exec(thread);
 
 

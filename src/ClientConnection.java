@@ -12,6 +12,7 @@ public class ClientConnection {
     private  ClientGUI clientGUI;
     public  DataInputStream input;
     public DataOutputStream output;
+    String message="";
 
     public ClientConnection() throws IOException {
         connect();
@@ -24,6 +25,7 @@ public class ClientConnection {
                clientGUI.lab_port.setText("port: "+String.valueOf(port));
 
 
+
         }
         catch (Exception e){}
 
@@ -33,7 +35,7 @@ public class ClientConnection {
             // Output and Input Stream
             input = new DataInputStream(socket.getInputStream());
             output = new DataOutputStream(socket.getOutputStream());
-            String message="";
+
             boolean k=false;
             while(true) {
                 clientGUI.con_info.append("1");
@@ -45,12 +47,13 @@ public class ClientConnection {
                     k=true;
                 }
                 clientGUI.con_info.append(String.valueOf(k));
-                clientGUI.con_info.append("cUI"+String.valueOf(clientGUI.send));
-                clientGUI.con_info.append("2");
+                //clientGUI.con_info.append("cUI"+String.valueOf(clientGUI.send));
+               // clientGUI.con_info.append("2");
 
                 while (clientGUI.send==false&&k==true&&(message = input.readUTF())!="") {
                     //clientGUI.text_info.append("client listening");
-                    clientGUI.text_info.append(message);
+                    handleOutput(message);
+                    clientGUI.text_info.append("received:"+message);
                     k=false;
                 }
 
@@ -72,6 +75,21 @@ public class ClientConnection {
         clientGUI.text_info.append("Data sent to Server--> " + sendData+"\n");
         output.flush();
         return true;
+
+    }
+    public void handleOutput(String meassage){
+        switch (clientGUI.command){
+        case "search":
+            String[] str=message.split("&");
+            for(int i=0;i<str.length;i++)
+            {
+                clientGUI.text_info.append("explanation"+Integer.toString(i)+": "+str[i]+"\n");
+            }
+            break;
+        default:
+            ;
+        }
+
 
     }
 

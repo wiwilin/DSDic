@@ -1,8 +1,12 @@
+import javax.imageio.ImageIO;
 import javax.net.ServerSocketFactory;
 import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.URL;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -30,11 +34,21 @@ public class ServerGUI {
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        URL url = getClass().getResource("image/serverIcon.svg");
+
+        ImageIcon icon = new ImageIcon(url);
+
         JPanel panel = new JPanel();
         frame.add(panel);
+
         placeComponents(panel);
 
+
+
     }
+
+
+
     public void placeComponents(JPanel panel) {
 
         panel.setLayout(null);
@@ -54,8 +68,8 @@ public class ServerGUI {
         lab_port.setBounds(40,20,100,20);
         lab_path.setBounds(260,20,100,20);
         text_get.setBounds(30, 120, 80, 20);
-        text_log.setBounds(30, 60, 300, 140);
-        text_ter.setBounds(30, 240, 300, 60);
+        text_log.setBounds(30, 60, 300, 100);
+        text_ter.setBounds(30, 240, 300, 100);
         btn_clr.setBounds(30,320,60,20);
 
        // panel.add(text_get);
@@ -94,7 +108,7 @@ public class ServerGUI {
                 counter++;
                 text_log.append("client"+counter+" connected\n");
 
-                ConnectionThread thread=new ConnectionThread(clientsocket,counter,this,dicMap);
+                ConnectionThread thread=new ConnectionThread(clientsocket,counter,this);
                 excutor.exec(thread);
 
 

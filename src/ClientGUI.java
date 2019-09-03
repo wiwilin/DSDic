@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.net.URL;
 
 public class ClientGUI{
     public static JLabel lab_ip;
@@ -21,12 +22,15 @@ public class ClientGUI{
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+
+
         JPanel panel = new JPanel();
         frame.add(panel);
         placeComponents(panel);
 
         frame.setVisible(true);
     }
+
 
     public void placeComponents(JPanel panel) {
 

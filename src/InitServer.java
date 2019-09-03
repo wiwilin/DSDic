@@ -5,8 +5,12 @@ public class InitServer {
     public static void main(String[] args) {
 
             try {
-                int port=1050;
-                String path="a.txt";
+                int port;
+                if(args.length>0) {
+                    port=Integer.parseInt(args[0]);
+                } else
+                    port=1050;
+                String path="Dic.json";
                 if(args.length==2) {
                     System.out.println("port changed to "+port+", path changed to "+path);
                     port = Integer.parseInt(args[0]);
