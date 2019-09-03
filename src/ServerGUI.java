@@ -34,7 +34,7 @@ public class ServerGUI {
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        URL url = getClass().getResource("image/serverIcon.svg");
+        URL url = getClass().getResource("image/server.png");
 
         ImageIcon icon = new ImageIcon(url);
 

@@ -78,7 +78,7 @@ public class ConnectionThread implements Runnable {
         }
         //System.out.println("command:" + command + "word:" + word + "meaning" + meaning);
         String msg=command+" "+meaning+" to "+word;
-        serverGUI.text_ter.append("received from Client "+counter+" "+msg);
+        serverGUI.text_ter.append("Request from Client "+counter+" : "+msg);
         try {
             switch (command) {
                 case "search":
@@ -98,7 +98,7 @@ public class ConnectionThread implements Runnable {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return "ok";
+        return "invalid operation";
     }
 
 

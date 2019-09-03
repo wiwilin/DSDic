@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="k">
+      <change afterPath="$PROJECT_DIR$/src/image/Client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/Server.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DS/ConnectionThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ConnectionThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/DicMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/DicMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/InitServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/InitServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DS/ServerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ServerGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerListening.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ServerListening.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnectionThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DicMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DicMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InitServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InitServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerListening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerListening.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +29,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PqeCL0d8nzEXMRk1dCnAzlxGzS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -66,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.InitServer">
+  <component name="RunManager" selected="Application.InitClient">
     <configuration name="InitClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="InitClient" />
       <module name="DS" />
@@ -98,8 +93,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.InitServer" />
         <item itemvalue="Application.InitClient" />
+        <item itemvalue="Application.InitServer" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -175,6 +170,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="GUI changed" />
     <MESSAGE value="File change" />
     <MESSAGE value="thread pool" />

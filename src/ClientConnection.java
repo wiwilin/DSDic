@@ -38,7 +38,7 @@ public class ClientConnection {
 
             boolean k=false;
             while(true) {
-                clientGUI.con_info.append("1");
+                //clientGUI.con_info.append("1");
                 while (clientGUI.send==true&&k==false&&sendData()) {
                     clientGUI.text_info.append("client sent");
                     System.out.println("clent send");
@@ -46,7 +46,9 @@ public class ClientConnection {
                     clientGUI.send=false;
                     k=true;
                 }
-                clientGUI.con_info.append(String.valueOf(k));
+
+                clientGUI.con_info.append("Connecting");
+                clientGUI.con_info.setText("");
                 //clientGUI.con_info.append("cUI"+String.valueOf(clientGUI.send));
                // clientGUI.con_info.append("2");
 
