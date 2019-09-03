@@ -10,6 +10,7 @@ public class ServerGUI {
     public JFrame frame;
     public JTextField text_get;
     public JTextArea text_log;
+    public JTextArea text_ter;
     private int port;
     private static String path;
 
@@ -26,7 +27,7 @@ public class ServerGUI {
     }
     public void initialize(){
         frame = new JFrame("Dictionary Server");
-        frame.setSize(400, 300);
+        frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
@@ -41,22 +42,36 @@ public class ServerGUI {
 
         JLabel lab_port=new JLabel(String.valueOf("port: "+port));
         JLabel lab_path=new JLabel("path: "+path);
+        JButton btn_clr = new JButton("clear");
 
         text_get=new JTextField(path);
         text_log=new JTextArea();
+        text_ter=new JTextArea();
+        text_log.setLineWrap(true);
+        text_ter.setLineWrap(true);
 
 
         lab_port.setBounds(40,20,100,20);
         lab_path.setBounds(260,20,100,20);
         text_get.setBounds(30, 120, 80, 20);
-        text_log.setBounds(30, 60, 300, 160);
+        text_log.setBounds(30, 60, 300, 140);
+        text_ter.setBounds(30, 240, 300, 60);
+        btn_clr.setBounds(30,320,60,20);
 
        // panel.add(text_get);
         panel.add(text_log);
+        panel.add(text_ter);
         panel.add(lab_port);
         panel.add(lab_path);
+        panel.add(btn_clr);
+
+        btn_clr.addActionListener(e->{
+
+            text_log.setText("");
+            text_ter.setText("");
 
 
+        });
 
     }
 

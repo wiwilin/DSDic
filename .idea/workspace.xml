@@ -6,11 +6,11 @@
       <change beforePath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DS/ConnectionThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ConnectionThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ServerGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnectionThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerGUI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

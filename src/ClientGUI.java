@@ -6,18 +6,19 @@ public class ClientGUI{
     public static JTextField text_voca;
     public static JTextField text_explan;
     public JTextArea text_info;
+    public JTextArea con_info;
     public static JFrame frame;
     public String command;
     public String vocabulary;
     public String explanation;
-    boolean send=false;
+    public boolean send;
     public ClientGUI() {
         initialize();
     }
 
     public void initialize() {
         frame = new JFrame("Dictionary Client");
-        frame.setSize(400, 300);
+        frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
@@ -44,6 +45,7 @@ public class ClientGUI{
 
         JButton btn_clear = new JButton("clear");
         JButton btn_send = new JButton("send");
+        send=false;
         btn_send.addActionListener(e->{
 
             command=(String) box_comm.getSelectedItem();
@@ -56,10 +58,16 @@ public class ClientGUI{
             text_voca.setText("");
             text_explan.setText("");
             text_info.setText("");
+            con_info.setText("");
+
         });
 
         text_info = new JTextArea();
+        con_info = new JTextArea();
         text_info.setEditable(false);
+        text_info.setLineWrap(true);
+        con_info.setLineWrap(true);
+
 
         lab_ip.setBounds(270, 20, 80, 20);
         lab_port.setBounds(40, 20, 80, 20);
@@ -68,9 +76,10 @@ public class ClientGUI{
         text_voca.setBounds(120, 50, 120, 20);
         text_explan.setBounds(120, 90, 120, 20);
         box_comm.setBounds(260, 90, 100, 20);
-        btn_send.setBounds(265, 230, 80, 19);
-        btn_clear.setBounds(265, 190, 80, 19);
-        text_info.setBounds(40, 130, 200, 120);
+        btn_send.setBounds(266, 180, 80, 19);
+        btn_clear.setBounds(266, 227, 80, 19);
+        text_info.setBounds(40, 150, 200, 100);
+        con_info.setBounds(40, 290, 300, 40);
 
         panel.add(lab_ip);
         panel.add(lab_port);
@@ -82,6 +91,7 @@ public class ClientGUI{
         panel.add(btn_send);
         panel.add(btn_clear);
         panel.add(text_info);
+        panel.add(con_info);
 
 
     }
