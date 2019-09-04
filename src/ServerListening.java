@@ -9,9 +9,11 @@ import java.util.concurrent.Executors;
 public class ServerListening {
     private static int port;
     private String path;
-    private static int counter=0;
+    private static int counter;
     private ExecutorService pool=null;
     public ServerGUI serverGUI;
+    public static int numClient;
+    public static int numWords=0;
     public DicMap dicMap;
 
     public ServerListening(ServerGUI serverGUI){
@@ -39,6 +41,8 @@ public class ServerListening {
 
                 Socket socket = serversocket.accept();
                 counter++;
+                numClient++;
+                serverGUI.text_client.setText("client: "+numClient);
                 serverGUI.text_log.append("client"+counter+"reply\n");
 
                 ConnectionThread thread=new ConnectionThread(socket,counter,serverGUI);

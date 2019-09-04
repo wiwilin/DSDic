@@ -16,6 +16,8 @@ public class ClientGUI{
     public String vocabulary;
     public String explanation;
     public boolean send;
+    public static int numClient;
+    public static int numWords;
     private JScrollPane sp;
     public ClientGUI() {
         initialize();

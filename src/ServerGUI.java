@@ -22,6 +22,10 @@ public class ServerGUI {
     public JTextArea text_log;
     public JTextArea text_ter;
     public JTextArea text_file;
+    public static int numClient;
+    public static int numWords;
+    public Label text_client;
+    public Label text_word;
     private int port;
     private static String path;
 
@@ -38,6 +42,9 @@ public class ServerGUI {
         initialize();
     }
     public void initialize(){
+
+        numClient=0;
+        numWords=0;
         frame = new JFrame("Dictionary Server");
         frame.setSize(800, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,6 +85,10 @@ public class ServerGUI {
 
         JLabel lab_port=new JLabel(String.valueOf("port: "+port));
         JLabel lab_path=new JLabel("path: "+path);
+
+        text_client=new Label("total clients: "+numClient);
+        text_word=new Label("total words: "+numClient);
+
         JButton btn_clr = new JButton("clear");
 
         text_get=new JTextField(path);
@@ -92,6 +103,8 @@ public class ServerGUI {
         text_get.setBounds(30, 120, 80, 20);
         text_log.setBounds(30, 60, 300, 100);
         text_ter.setBounds(30, 210, 300, 100);
+        text_client.setBounds(150, 330, 60, 20);
+        text_word.setBounds(250, 330, 60, 20);
         btn_clr.setBounds(30,330,60,20);
 
        // panel.add(text_get);
@@ -100,6 +113,8 @@ public class ServerGUI {
         panel.add(lab_port);
         panel.add(lab_path);
         panel.add(btn_clr);
+        panel.add(text_word);
+        panel.add(text_client);
 
         btn_clr.addActionListener(e->{
 
@@ -179,6 +194,9 @@ public class ServerGUI {
                 Socket clientsocket = serversocket.accept();
                 counter++;
                 text_log.append("client"+counter+" connected\n");
+
+                numClient++;
+                text_client.setText("total clients: "+numClient);
 
                 ConnectionThread thread=new ConnectionThread(clientsocket,counter,this);
                 excutor.exec(thread);
