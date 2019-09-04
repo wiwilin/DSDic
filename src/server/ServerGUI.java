@@ -107,8 +107,8 @@ public class ServerGUI {
         text_get.setBounds(30, 120, 80, 20);
         text_log.setBounds(35, 60, 335, 105);
         text_ter.setBounds(35, 210, 335, 105);
-        text_client.setBounds(273, 180, 120, 20);
-        text_word.setBounds(282, 330, 120, 20);
+        text_client.setBounds(276, 180, 120, 20);
+        text_word.setBounds(280, 330, 120, 20);
         btn_clr.setBounds(40, 180, 60, 20);
         btn_save.setBounds(40, 330, 60, 20);
         btn_load.setBounds(140, 330, 60, 20);
