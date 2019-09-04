@@ -6,6 +6,7 @@ package client;
 //
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -32,12 +33,12 @@ public class ClientGUI {
 
     public void initialize() {
         frame = new JFrame("Dictionary Client");
-        frame.setSize(400, 400);
+        frame.setSize(420, 400);
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
         JPanel panel = new JPanel();
-        panel.setBounds(0, 0, 400, 400);
+        panel.setBounds(0, 0, 420, 400);
         frame.add(panel);
         placeComponents(panel);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -106,18 +107,18 @@ public class ClientGUI {
         text_info.setWrapStyleWord(true);
 
 
-        lab_ip.setBounds(270, 20, 80, 20);
+        lab_ip.setBounds(278, 20, 80, 20);
         lab_port.setBounds(40, 20, 80, 20);
-        lab_voca.setBounds(40, 50, 80, 20);
-        lab_explan.setBounds(40, 90, 80, 20);
-        text_voca.setBounds(120, 50, 120, 20);
-        text_explan.setBounds(120, 90, 120, 20);
+        lab_voca.setBounds(40, 55, 80, 20);
+        lab_explan.setBounds(40, 100, 80, 20);
+        text_voca.setBounds(120, 55, 130, 20);
+        text_explan.setBounds(120, 100, 239, 20);
         text_de.setBounds(120, 90, 120, 20);
-        box_comm.setBounds(260, 90, 100, 20);
-        btn_send.setBounds(266, 180, 80, 19);
-        btn_clear.setBounds(266, 227, 80, 19);
-        text_info.setBounds(40, 150, 200, 100);
-        con_info.setBounds(40, 290, 300, 40);
+        box_comm.setBounds(265, 55, 100, 20);
+        btn_send.setBounds(268, 145, 80, 19);
+        btn_clear.setBounds(40, 145, 80, 19);
+        text_info.setBounds(40, 178, 315, 100);
+        con_info.setBounds(40, 300, 315, 35);
 
         panel.add(lab_ip);
         panel.add(lab_port);
@@ -130,6 +131,9 @@ public class ClientGUI {
         panel.add(btn_clear);
         panel.add(text_info);
         panel.add(con_info);
+
+        text_explan.setEditable(false);
+        text_explan.setBackground(Color.LIGHT_GRAY);
 
 
     }

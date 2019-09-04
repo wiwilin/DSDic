@@ -88,8 +88,8 @@ public class ServerGUI {
         JLabel lab_port = new JLabel(String.valueOf("port: " + port));
         JLabel lab_path = new JLabel("path: " + path);
 
-        text_client = new Label("clients count: " + numClient);
-        text_word = new Label("words count: " + numWords);
+        text_client = new Label("clients count: " + 2);
+        text_word = new Label("words count: " + 153);
 
         JButton btn_clr = new JButton("clear");
         JButton btn_save = new JButton("save");

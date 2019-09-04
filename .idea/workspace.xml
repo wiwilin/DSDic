@@ -6,7 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="" />
+    <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dic.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerGUI.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.InitServer">
+  <component name="RunManager" selected="Application.InitClient">
     <configuration name="InitClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.InitClient" />
       <module name="DS" />
@@ -102,8 +107,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.InitServer" />
         <item itemvalue="Application.InitClient" />
+        <item itemvalue="Application.InitServer" />
         <item itemvalue="Application.InitServer (1)" />
         <item itemvalue="Application.Main" />
       </list>
@@ -124,7 +129,7 @@
       <workItem from="1566861976540" duration="730000" />
       <workItem from="1567311478170" duration="2499000" />
       <workItem from="1567419627105" duration="14309000" />
-      <workItem from="1567600577358" duration="12517000" />
+      <workItem from="1567600577358" duration="16358000" />
     </task>
     <task id="LOCAL-00001" summary="GUI changed">
       <created>1566731184371</created>
@@ -259,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567615761961</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="set GUI">
+      <created>1567615911682</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1567615911682</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
