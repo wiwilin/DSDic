@@ -78,7 +78,7 @@ public class ConnectionThread implements Runnable {
         }
         //System.out.println("command:" + command + "word:" + word + "meaning" + meaning);
         String msg=command+" "+meaning+" to "+word;
-        serverGUI.text_ter.append("Request from Client "+counter+" : "+msg);
+        serverGUI.text_log.append("Request from Client "+counter+" : "+msg+"\n");
         try {
             switch (command) {
                 case "search":
@@ -106,7 +106,7 @@ public class ConnectionThread implements Runnable {
     public String writeArrayList(ArrayList list) {
 
         String str = "";
-        serverGUI.text_log.setText("ok");
+        serverGUI.text_log.append("Finding explanation\n");
         for (int i = 0; i < list.size(); i++) {
 
             {

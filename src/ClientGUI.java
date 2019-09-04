@@ -8,6 +8,7 @@ public class ClientGUI{
     public static JTextField text_explan;
     public JTextArea text_info;
     public JTextArea con_info;
+    public JTextArea text_de;
     public static JFrame frame;
     public String command;
     public String vocabulary;
@@ -43,6 +44,7 @@ public class ClientGUI{
 
         text_voca = new JTextField("");
         text_explan = new JTextField("");
+        text_de = new JTextArea("");
 
         String[] commandList = new String[]{"search", "delete", "add"};
         JComboBox box_comm = new JComboBox<String>(commandList);
@@ -79,6 +81,7 @@ public class ClientGUI{
         lab_explan.setBounds(40, 90, 80, 20);
         text_voca.setBounds(120, 50, 120, 20);
         text_explan.setBounds(120, 90, 120, 20);
+        text_de.setBounds(120, 90, 120, 20);
         box_comm.setBounds(260, 90, 100, 20);
         btn_send.setBounds(266, 180, 80, 19);
         btn_clear.setBounds(266, 227, 80, 19);

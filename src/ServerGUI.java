@@ -69,8 +69,8 @@ public class ServerGUI {
         lab_path.setBounds(260,20,100,20);
         text_get.setBounds(30, 120, 80, 20);
         text_log.setBounds(30, 60, 300, 100);
-        text_ter.setBounds(30, 240, 300, 100);
-        btn_clr.setBounds(30,320,60,20);
+        text_ter.setBounds(30, 210, 300, 100);
+        btn_clr.setBounds(30,330,60,20);
 
        // panel.add(text_get);
         panel.add(text_log);
