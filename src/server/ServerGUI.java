@@ -1,22 +1,17 @@
 package server;
 
-import javax.imageio.ImageIO;
 import javax.net.ServerSocketFactory;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class ServerGUI {
     public JFrame frame;
@@ -48,7 +43,7 @@ public class ServerGUI {
         numClient=0;
         numWords=0;
         frame = new JFrame("Dictionary Server");
-        frame.setSize(800, 400);
+        frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         URL url = getClass().getResource("server.png");
@@ -63,7 +58,7 @@ public class ServerGUI {
 
         JScrollPane scrol=new JScrollPane();
         scrol.setBounds(400,0,400,400);
-        frame.add(scrol);
+        //frame.add(scrol);
         placeCompo(scrol);
 
         frame.addWindowListener(new WindowAdapter(){

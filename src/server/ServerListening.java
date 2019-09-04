@@ -1,13 +1,9 @@
 package server;
 
-import server.ConnectionThread;
-import server.DicMap;
-import server.ServerGUI;
-import server.ThreadExcutor;
-
 import javax.net.ServerSocketFactory;
 import java.io.IOException;
-import java.net.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 
 /*Server listening act as a thread manager*/

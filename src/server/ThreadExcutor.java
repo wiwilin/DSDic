@@ -8,19 +8,19 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 class ThreadExcutor{
 
-    //创建
+    //create
     private volatile boolean RUNNING = true;
 
-    //所有任务都放队列中，让工作线程来消费
+    //all task in queue,waiting for working threads
     private static BlockingQueue<Runnable> queue = null;
 
     private final HashSet<Worker> workers = new HashSet<Worker>();
 
     private final List<Thread> threadList = new ArrayList<Thread>();
 
-    //工作线程数
+    //working threads count
     int poolSize = 0;
-    //核心线程数（创建了多少个工作线程）
+    //core threads count
     int coreSize = 0;
 
     boolean shutdown = false;

@@ -1,0 +1,11 @@
+/.DS_Store
+/.classpath
+/.project
+/ConnectionThread.class
+/DicMap.class
+/InitServer.class
+/Server.png
+/ServerGUI.class
+/ServerListening.class
+/ThreadExcutor$Worker.class
+/ThreadExcutor.class
