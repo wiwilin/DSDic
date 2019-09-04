@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.net.URL;
 
 public class ClientGUI{
@@ -28,6 +30,13 @@ public class ClientGUI{
         JPanel panel = new JPanel();
         frame.add(panel);
         placeComponents(panel);
+
+        frame.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent e){
+                int i=JOptionPane.showConfirmDialog(null, "确定要退出系统吗？", "退出系统", JOptionPane.YES_NO_OPTION);
+                if(i==JOptionPane.YES_OPTION){
+                    System.exit(0);
+                }}});
 
         frame.setVisible(true);
     }
