@@ -10,7 +10,7 @@ public class InitClient {
 
         } catch (Exception e) {
 
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 

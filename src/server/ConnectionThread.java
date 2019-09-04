@@ -76,7 +76,7 @@ public class ConnectionThread implements Runnable {
         }
         //System.out.println("command:" + command + "word:" + word + "meaning" + meaning);
         String msg = command + " " + meaning + " to " + word;
-        serverGUI.text_log.append("Request from Client " + counter + " : " + msg + "\n");
+        serverGUI.text_ter.append("Request from Client " + counter + " : " + msg + "\n");
         int size=dicMap.values().size();
         serverGUI.text_word.setText("wordss: "+size);
         try {
@@ -97,16 +97,16 @@ public class ConnectionThread implements Runnable {
                     throw new IllegalStateException("Unexpected value: " + star[0]);
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            return "exception"+"*"+e.getMessage();
         }
-        return "invalid operation";
+
     }
 
 
     public String writeArrayList(ArrayList list) {
 
         String str = "";
-        serverGUI.text_log.append("Finding explanation\n");
+        serverGUI.text_ter.append("Finding explanation\n");
         for (int i = 0; i < list.size(); i++) {
 
             {

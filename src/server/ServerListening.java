@@ -35,7 +35,7 @@ public class ServerListening {
 
 
             serverGUI.text_log.append("Server start\n");
-            serverGUI.text_log.append("Listening for clients");
+            serverGUI.text_log.append("Listening for clients\n");
 
 
             while (true) {

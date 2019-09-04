@@ -85,7 +85,7 @@ public class DicMap extends HashMap {
     public void printfile() {
         ObjectMapper mapper = new ObjectMapper();
 
-        File file = new File("result.json");
+        File file = new File("Dic.json");
         try {
             mapper.writeValue(file, dicMap);
         } catch (Exception e) {
@@ -98,7 +98,7 @@ public class DicMap extends HashMap {
 
         try {
             Map<String, Object> newMap = mapper.readValue(new File(
-                    "result.json"), new TypeReference<Map<String, Object>>() {
+                    "Dic.json"), new TypeReference<Map<String, Object>>() {
             });
 
             //System.out.println("Key : " + newMap.get("key"));

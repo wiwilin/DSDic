@@ -184,7 +184,7 @@ public class ServerGUI {
 
 
             text_log.append("Server start\n");
-            text_log.append("Listening for clients");
+            text_log.append("Listening for clients\n");
 
 
             while (true) {

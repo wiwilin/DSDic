@@ -1,3 +1,7 @@
+/*author:Wei LIN
+885536
+wlin8
+ */
 package server;
 
 
@@ -27,7 +31,7 @@ public class InitServer {
 
         } catch (Exception e) {
 
-            e.printStackTrace();
+            System.out.println(e.getMessage());
 
         }
     }
