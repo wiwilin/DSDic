@@ -85,7 +85,7 @@ public class ConnectionThread implements Runnable {
                     String meanings = writeArrayList(dicMap.searchWord(word));
                     return meanings;
                 case "add":
-                    dicMap.addWord(word, meaning);
+                    dicMap.addMeaning(word, meaning);
                     return "added";
                 case "delete":
                     dicMap.deleteWord(word);

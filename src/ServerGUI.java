@@ -2,6 +2,8 @@ import javax.imageio.ImageIO;
 import javax.net.ServerSocketFactory;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -18,6 +20,7 @@ public class ServerGUI {
     private int port;
     private static String path;
 
+    public JScrollPane scrol;
 
     private static int counter=0;
     private ExecutorService pool=null;
@@ -31,7 +34,7 @@ public class ServerGUI {
     }
     public void initialize(){
         frame = new JFrame("Dictionary Server");
-        frame.setSize(400, 400);
+        frame.setSize(800, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         URL url = getClass().getResource("image/server.png");
@@ -39,9 +42,23 @@ public class ServerGUI {
         ImageIcon icon = new ImageIcon(url);
 
         JPanel panel = new JPanel();
+        panel.setBounds(0,0,400,400);
         frame.add(panel);
 
         placeComponents(panel);
+
+        JScrollPane scrol=new JScrollPane();
+        scrol.setBounds(400,0,400,400);
+        frame.add(scrol);
+        placeCompo(scrol);
+
+        frame.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent e){
+                int i=JOptionPane.showConfirmDialog(null, "Sure to kill connection thread？", "exit", JOptionPane.YES_NO_OPTION);
+                if(i==JOptionPane.YES_OPTION){
+
+                    System.exit(0);
+                }}});
 
 
 
@@ -83,9 +100,19 @@ public class ServerGUI {
 
             text_log.setText("");
             text_ter.setText("");
-
+            scrol.setVisible(false);
 
         });
+
+    }
+
+    public void placeCompo(JScrollPane panel) {
+
+        panel.setLayout(null);
+        JTextArea text_file = new JTextArea("o");
+        panel.add(text_file);
+        text_file.setBounds(450, 0, 300, 300);
+
 
     }
 

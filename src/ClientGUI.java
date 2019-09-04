@@ -16,6 +16,7 @@ public class ClientGUI{
     public String vocabulary;
     public String explanation;
     public boolean send;
+    private JScrollPane sp;
     public ClientGUI() {
         initialize();
     }
@@ -28,16 +29,19 @@ public class ClientGUI{
 
 
         JPanel panel = new JPanel();
+        panel.setBounds(0, 0, 400, 400);
         frame.add(panel);
         placeComponents(panel);
 
+
+
         frame.addWindowListener(new WindowAdapter(){
             public void windowClosing(WindowEvent e){
-                int i=JOptionPane.showConfirmDialog(null, "确定要退出系统吗？", "退出系统", JOptionPane.YES_NO_OPTION);
+                int i=JOptionPane.showConfirmDialog(null, "Sure to kill connection thread？", "exit", JOptionPane.YES_NO_OPTION);
                 if(i==JOptionPane.YES_OPTION){
+
                     System.exit(0);
                 }}});
-
         frame.setVisible(true);
     }
 
@@ -82,6 +86,7 @@ public class ClientGUI{
         text_info.setEditable(false);
         text_info.setLineWrap(true);
         con_info.setLineWrap(true);
+        text_info.setWrapStyleWord(true);
 
 
         lab_ip.setBounds(270, 20, 80, 20);
@@ -111,9 +116,21 @@ public class ClientGUI{
 
 
     }
+
     public String getText(){
         String str=text_voca.getText();
         return text_voca.getText();
+    }
+    private JScrollPane getJTextArea(){
+        if(con_info==null){
+            con_info=new JTextArea();
+            //jtextarea.setBounds(5, 45, 650, 400);
+        }
+        //jtextarea.setLineWrap(true);
+        sp=new JScrollPane(con_info);
+        sp.setBounds(40, 400, 200, 100);
+        //sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        return sp;
     }
 
 }

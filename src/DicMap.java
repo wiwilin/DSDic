@@ -8,8 +8,10 @@ public class DicMap extends HashMap{
     public DicMap(){
         dicMap = new HashMap<String, ArrayList>();
         ArrayList list = new ArrayList<String>();
-        list.add("value");
+        list.add("A value");
+        list.add("Another value");
         dicMap.put("key",list);
+
 
 
     }
@@ -23,25 +25,22 @@ public class DicMap extends HashMap{
     {
         return dicMap.size();
     }
-    public void addWord(String word,String meaning) throws Exception{
-        if(dicMap!=null) {
-            if (containsWord(word))
-                throw new Exception(word + " is already added");
+    public void addMeaning(String word,String meaning) throws Exception {
+        ArrayList meanings = new ArrayList<String>();
+
+        if (dicMap.containsKey(word)) {
+            meanings = dicMap.get(word);
+            meanings.add(meaning);
+            dicMap.put(word,meanings);
         }
-        ArrayList meanings = new ArrayList();
-        meanings.add(meaning);
-        try{
-            dicMap.putIfAbsent(word,meanings);
-        }catch (Exception e){}
+        else {
+            try {
+                meanings.add(meaning);
+                dicMap.putIfAbsent(word, meanings);
+            }catch (Exception e){}
+        }
+
         System.out.println("added"+word);
-    }
-    public void addMeaning(String word,String meaning)throws Exception{
-        if (!dicMap.containsKey(word))
-            throw new Exception(word + " is not found");
-        ArrayList meanings = new ArrayList();
-        meanings=getMeaning(word);
-        if (meanings.contains(meaning))
-            throw new Exception(meaning + " is already added to word" + word);
     }
     public ArrayList searchWord(String word) throws Exception{
         ArrayList meanings = new ArrayList<String>();
@@ -50,8 +49,20 @@ public class DicMap extends HashMap{
         meanings= getMeaning(word);
         return meanings;
     }
+    /*
+    public void addMeaning(String word,String meaning)throws Exception{
+        if (!dicMap.containsKey(word))
+            throw new Exception(word + " is not found");
+        ArrayList meanings = new ArrayList();
+        meanings=getMeaning(word);
+        if (meanings.contains(meaning))
+            throw new Exception(meaning + " is already added to word" + word);
+    }
+    */
+
     public void deleteWord(String word) throws Exception{
-        if(!containsWord("word"))
+        System.out.println(word);
+        if(!dicMap.containsKey(word))
             throw new Exception(word+" is not found, please add word first");
         try{
             dicMap.remove(word);
@@ -68,6 +79,9 @@ public class DicMap extends HashMap{
             System.out.println(key + ":" + value);
 
         }
+
+    }
+    public void printfile(){
 
     }
 

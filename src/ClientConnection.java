@@ -55,7 +55,7 @@ public class ClientConnection {
                 while (clientGUI.send==false&&k==true&&(message = input.readUTF())!="") {
                     //clientGUI.text_info.append("client listening");
                     handleOutput(message);
-                    clientGUI.text_info.append("received:"+message);
+                   // clientGUI.text_info.append("received:"+message);
                     k=false;
                 }
 
@@ -74,7 +74,7 @@ public class ClientConnection {
 
         String sendData =clientGUI.command+","+clientGUI.vocabulary+","+clientGUI.explanation;
         output.writeUTF(sendData);
-        clientGUI.text_info.append("Data sent to Server--> " + sendData+"\n");
+        clientGUI.con_info.setText("sent to Server-->" + sendData+"\n");
         output.flush();
         return true;
 
@@ -83,7 +83,7 @@ public class ClientConnection {
         switch (clientGUI.command){
         case "search":
             String[] str=message.split("&");
-            for(int i=0;i<str.length;i++)
+            for(int i=1;i<str.length;i++)
             {
                 clientGUI.text_info.append("explanation"+Integer.toString(i)+": "+str[i]+"\n");
             }
