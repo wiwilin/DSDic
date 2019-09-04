@@ -46,9 +46,9 @@ public class ServerGUI {
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        URL url = getClass().getResource("server.png");
+       // URL url = getClass().getResource("server.png");
 
-        ImageIcon icon = new ImageIcon(url);
+        //ImageIcon icon = new ImageIcon(url);
 
         JPanel panel = new JPanel();
         panel.setBounds(0,0,400,400);

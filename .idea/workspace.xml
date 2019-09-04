@@ -6,20 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="jar">
-      <change afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/bin/.gitignore" afterDir="false" />
+    <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/JsonFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/JsonFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/InitServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/InitServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JsonFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/DicMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/DicMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/ServerListening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerListening.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/ThreadExcutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ThreadExcutor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.InitServer">
+  <component name="RunManager" selected="Application.InitClient">
     <configuration name="InitClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.InitClient" />
       <module name="DS" />
@@ -116,8 +107,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.InitServer" />
         <item itemvalue="Application.InitClient" />
+        <item itemvalue="Application.InitServer" />
         <item itemvalue="Application.InitServer (1)" />
         <item itemvalue="Application.Main" />
       </list>
@@ -223,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567576895256</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="jar">
+      <created>1567584515842</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1567584515842</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
