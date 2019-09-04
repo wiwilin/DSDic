@@ -1,5 +1,10 @@
 package client;
 
+//author:Wei LIN
+//number:885536
+//id:wlin8
+//
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;

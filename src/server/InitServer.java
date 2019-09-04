@@ -1,9 +1,9 @@
-/*author:Wei LIN
-885536
-wlin8
- */
 package server;
 
+//author:Wei LIN
+//number:885536
+//id:wlin8
+//
 
 public class InitServer {
 

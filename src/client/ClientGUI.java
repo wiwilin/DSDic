@@ -1,5 +1,10 @@
 package client;
 
+//author:Wei LIN
+//number:885536
+//id:wlin8
+//
+
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

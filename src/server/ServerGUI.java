@@ -1,5 +1,10 @@
 package server;
 
+//author:Wei LIN
+//number:885536
+//id:wlin8
+//
+
 import javax.net.ServerSocketFactory;
 import javax.swing.*;
 import java.awt.*;
@@ -43,7 +48,7 @@ public class ServerGUI {
         numClient = 0;
         numWords = 0;
         frame = new JFrame("Dictionary Server");
-        frame.setSize(400, 400);
+        frame.setSize(420, 400);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         // URL url = getClass().getResource("server.png");
@@ -51,13 +56,13 @@ public class ServerGUI {
         //ImageIcon icon = new ImageIcon(url);
 
         JPanel panel = new JPanel();
-        panel.setBounds(0, 0, 400, 400);
+        panel.setBounds(0, 0, 420, 400);
         frame.add(panel);
 
         placeComponents(panel);
 
         JScrollPane scrol = new JScrollPane();
-        scrol.setBounds(400, 0, 400, 400);
+        //scrol.setBounds(400, 0, 400, 400);
         //frame.add(scrol);
         placeCompo(scrol);
 
@@ -83,10 +88,12 @@ public class ServerGUI {
         JLabel lab_port = new JLabel(String.valueOf("port: " + port));
         JLabel lab_path = new JLabel("path: " + path);
 
-        text_client = new Label("total clients: " + numClient);
-        text_word = new Label("words: " + numWords);
+        text_client = new Label("clients count: " + numClient);
+        text_word = new Label("words count: " + numWords);
 
         JButton btn_clr = new JButton("clear");
+        JButton btn_save = new JButton("save");
+        JButton btn_load = new JButton("load");
 
         text_get = new JTextField(path);
         text_log = new JTextArea();
@@ -95,14 +102,16 @@ public class ServerGUI {
         text_ter.setLineWrap(true);
 
 
-        lab_port.setBounds(40, 20, 100, 20);
-        lab_path.setBounds(260, 20, 100, 20);
+        lab_port.setBounds(35, 20, 100, 20);
+        lab_path.setBounds(288, 20, 100, 20);
         text_get.setBounds(30, 120, 80, 20);
-        text_log.setBounds(30, 60, 300, 100);
-        text_ter.setBounds(30, 210, 300, 100);
-        text_client.setBounds(150, 330, 120, 20);
-        text_word.setBounds(270, 330, 120, 20);
-        btn_clr.setBounds(30, 330, 60, 20);
+        text_log.setBounds(35, 60, 335, 105);
+        text_ter.setBounds(35, 210, 335, 105);
+        text_client.setBounds(273, 180, 120, 20);
+        text_word.setBounds(282, 330, 120, 20);
+        btn_clr.setBounds(40, 180, 60, 20);
+        btn_save.setBounds(40, 330, 60, 20);
+        btn_load.setBounds(140, 330, 60, 20);
 
         // panel.add(text_get);
         panel.add(text_log);
@@ -110,6 +119,8 @@ public class ServerGUI {
         panel.add(lab_port);
         panel.add(lab_path);
         panel.add(btn_clr);
+        panel.add(btn_save);
+        panel.add(btn_load);
         panel.add(text_word);
         panel.add(text_client);
 
@@ -194,7 +205,7 @@ public class ServerGUI {
                 text_log.append("client" + counter + " connected\n");
 
                 numClient++;
-                text_client.setText("total clients: " + numClient);
+                text_client.setText("clients count: " + numClient);
 
                 ConnectionThread thread = new ConnectionThread(clientsocket, counter, this);
                 excutor.exec(thread);
