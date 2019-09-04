@@ -44,7 +44,7 @@ public class ServerGUI {
         numWords = 0;
         frame = new JFrame("Dictionary Server");
         frame.setSize(400, 400);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         // URL url = getClass().getResource("server.png");
 
@@ -183,8 +183,8 @@ public class ServerGUI {
         try (ServerSocket serversocket = factory.createServerSocket(port);) {
 
 
-            System.out.println("Server start");
-            System.out.println("Listening for clients");
+            text_log.append("Server start\n");
+            text_log.append("Listening for clients");
 
 
             while (true) {

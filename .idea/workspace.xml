@@ -7,18 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/result.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DS.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/JsonFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.json" beforeDir="false" afterPath="$PROJECT_DIR$/result.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/InitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/InitClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/ConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ConnectionThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/DicMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/DicMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/ServerListening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerListening.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/ThreadExcutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ThreadExcutor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567589216465</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="json write down">
+      <created>1567595366963</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1567595366963</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +281,7 @@
     <MESSAGE value="client word count" />
     <MESSAGE value="jar" />
     <MESSAGE value="json file" />
-    <option name="LAST_COMMIT_MESSAGE" value="json file" />
+    <MESSAGE value="json write down" />
+    <option name="LAST_COMMIT_MESSAGE" value="json write down" />
   </component>
 </project>

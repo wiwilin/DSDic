@@ -53,6 +53,7 @@ public class DicMap extends HashMap {
     }
 
     public ArrayList searchWord(String word) throws Exception {
+        System.out.println("mapsize"+dicMap.size());
         ArrayList meanings = new ArrayList<String>();
         if (!dicMap.containsKey(word))
             throw new Exception(word + " is not found, please add word first");

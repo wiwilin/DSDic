@@ -35,6 +35,8 @@ public class ClientGUI {
         panel.setBounds(0, 0, 400, 400);
         frame.add(panel);
         placeComponents(panel);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
 
 
         frame.addWindowListener(new WindowAdapter() {
@@ -47,6 +49,9 @@ public class ClientGUI {
                     send = true;
                     System.exit(0);
                 }
+                else
+                    return;
+
             }
         });
         frame.setVisible(true);

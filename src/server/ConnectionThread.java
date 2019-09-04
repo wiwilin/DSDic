@@ -77,7 +77,8 @@ public class ConnectionThread implements Runnable {
         //System.out.println("command:" + command + "word:" + word + "meaning" + meaning);
         String msg = command + " " + meaning + " to " + word;
         serverGUI.text_log.append("Request from Client " + counter + " : " + msg + "\n");
-        serverGUI.text_word.setText("words: " + dicMap.size());
+        int size=dicMap.values().size();
+        serverGUI.text_word.setText("wordss: "+size);
         try {
             switch (command) {
                 case "search":

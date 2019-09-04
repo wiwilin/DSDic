@@ -39,17 +39,18 @@ public class ClientConnection {
             while (true) {
                 //clientGUI.con_info.append("1");
                 while (clientGUI.send == true && k == false && sendData()) {
-                    clientGUI.con_info.setText("client sent");
-                    System.out.println("clent send");
+                    clientGUI.con_info.setText("Request sent");
+                   // System.out.println("clent send");
                     //sendData();
                     clientGUI.send = false;
                     k = true;
                 }
 
-                clientGUI.text_de.append("jaja");
-                // clientGUI.con_info.setText("");
+                 clientGUI.text_de.append("jaja");
+                 //clientGUI.con_info.setText("connecting");
+                 //clientGUI.con_info.setText("");
                 //clientGUI.con_info.append("cUI"+String.valueOf(clientGUI.send));
-                // clientGUI.con_info.append("2");
+
 
                 while (clientGUI.send == false && k == true && (message = input.readUTF()) != "") {
                     //clientGUI.text_info.append("client listening");
