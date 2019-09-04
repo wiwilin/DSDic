@@ -1,7 +1,5 @@
 package server;
 
-import server.ServerGUI;
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -77,8 +75,9 @@ public class ConnectionThread implements Runnable {
             meaning = "";
         }
         //System.out.println("command:" + command + "word:" + word + "meaning" + meaning);
-        String msg=command+" "+meaning+" to "+word;
-        serverGUI.text_log.append("Request from Client "+counter+" : "+msg+"\n");
+        String msg = command + " " + meaning + " to " + word;
+        serverGUI.text_log.append("Request from Client " + counter + " : " + msg + "\n");
+        serverGUI.text_word.setText("words: " + dicMap.size());
         try {
             switch (command) {
                 case "search":
@@ -86,6 +85,7 @@ public class ConnectionThread implements Runnable {
                     return meanings;
                 case "add":
                     dicMap.addMeaning(word, meaning);
+                    dicMap.printfile();
                     return "added";
                 case "delete":
                     dicMap.deleteWord(word);
@@ -102,7 +102,6 @@ public class ConnectionThread implements Runnable {
     }
 
 
-
     public String writeArrayList(ArrayList list) {
 
         String str = "";
@@ -110,8 +109,8 @@ public class ConnectionThread implements Runnable {
         for (int i = 0; i < list.size(); i++) {
 
             {
-                str+="&";
-                str+=list.get(i);
+                str += "&";
+                str += list.get(i);
 
             }
 

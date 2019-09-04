@@ -3,9 +3,8 @@ package client;
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.net.URL;
 
-public class ClientGUI{
+public class ClientGUI {
     public static JLabel lab_ip;
     public static JLabel lab_port;
     public static JTextField text_voca;
@@ -21,6 +20,7 @@ public class ClientGUI{
     public static int numClient;
     public static int numWords;
     private JScrollPane sp;
+
     public ClientGUI() {
         initialize();
     }
@@ -31,36 +31,36 @@ public class ClientGUI{
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-
         JPanel panel = new JPanel();
         panel.setBounds(0, 0, 400, 400);
         frame.add(panel);
         placeComponents(panel);
 
 
-
-        frame.addWindowListener(new WindowAdapter(){
-            public void windowClosing(WindowEvent e){
-                int i=JOptionPane.showConfirmDialog(null, "Sure to kill connection thread？", "exit", JOptionPane.YES_NO_OPTION);
-                if(i==JOptionPane.YES_OPTION){
-                    command="kill";
-                    vocabulary=text_voca.getText();
-                    explanation=text_explan.getText();
-                    send=true;
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                int i = JOptionPane.showConfirmDialog(null, "Sure to kill connection thread？", "exit", JOptionPane.YES_NO_OPTION);
+                if (i == JOptionPane.YES_OPTION) {
+                    command = "kill";
+                    vocabulary = text_voca.getText();
+                    explanation = text_explan.getText();
+                    send = true;
                     System.exit(0);
-                }}});
+                }
+            }
+        });
         frame.setVisible(true);
     }
 
 
     public void placeComponents(JPanel panel) {
 
-         panel.setLayout(null);
+        panel.setLayout(null);
 
-         JLabel lab_voca = new JLabel("vocabulary");
-         JLabel lab_explan = new JLabel("explanation");
-         lab_ip = new JLabel();
-         lab_port = new JLabel();
+        JLabel lab_voca = new JLabel("vocabulary");
+        JLabel lab_explan = new JLabel("explanation");
+        lab_ip = new JLabel();
+        lab_port = new JLabel();
 
         text_voca = new JTextField("");
         text_explan = new JTextField("");
@@ -71,15 +71,15 @@ public class ClientGUI{
 
         JButton btn_clear = new JButton("clear");
         JButton btn_send = new JButton("send");
-        send=false;
-        btn_send.addActionListener(e->{
+        send = false;
+        btn_send.addActionListener(e -> {
 
-            command=(String) box_comm.getSelectedItem();
-            vocabulary=text_voca.getText();
-            explanation=text_explan.getText();
-            send=true;
+            command = (String) box_comm.getSelectedItem();
+            vocabulary = text_voca.getText();
+            explanation = text_explan.getText();
+            send = true;
         });
-        btn_clear.addActionListener(e->{
+        btn_clear.addActionListener(e -> {
 
             text_voca.setText("");
             text_explan.setText("");
@@ -124,17 +124,18 @@ public class ClientGUI{
 
     }
 
-    public String getText(){
-        String str=text_voca.getText();
+    public String getText() {
+        String str = text_voca.getText();
         return text_voca.getText();
     }
-    private JScrollPane getJTextArea(){
-        if(con_info==null){
-            con_info=new JTextArea();
+
+    private JScrollPane getJTextArea() {
+        if (con_info == null) {
+            con_info = new JTextArea();
             //jtextarea.setBounds(5, 45, 650, 400);
         }
         //jtextarea.setLineWrap(true);
-        sp=new JScrollPane(con_info);
+        sp = new JScrollPane(con_info);
         sp.setBounds(40, 400, 200, 100);
         //sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         return sp;

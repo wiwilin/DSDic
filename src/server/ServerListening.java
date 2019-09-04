@@ -11,16 +11,16 @@ public class ServerListening {
     private static int port;
     private String path;
     public static int counter;
-    private ExecutorService pool=null;
+    private ExecutorService pool = null;
     public ServerGUI serverGUI;
     public static int numClient;
-    public static int numWords=0;
+    public static int numWords = 0;
     public DicMap dicMap;
 
-    public ServerListening(ServerGUI serverGUI){
-       this.port=port;
-       serverGUI=serverGUI;
-       listen();
+    public ServerListening(ServerGUI serverGUI) {
+        this.port = port;
+        serverGUI = serverGUI;
+        listen();
 
 
     }
@@ -31,7 +31,7 @@ public class ServerListening {
 
 
         ServerSocketFactory factory = ServerSocketFactory.getDefault();
-        try(ServerSocket serversocket = factory.createServerSocket(port);){
+        try (ServerSocket serversocket = factory.createServerSocket(port);) {
 
 
             serverGUI.text_log.append("Server start\n");
@@ -43,10 +43,10 @@ public class ServerListening {
                 Socket socket = serversocket.accept();
                 counter++;
                 numClient++;
-                serverGUI.text_client.setText("client: "+numClient);
-                serverGUI.text_log.append("client"+counter+"reply\n");
+                serverGUI.text_client.setText("client: " + numClient);
+                serverGUI.text_log.append("client" + counter + "reply\n");
 
-                ConnectionThread thread=new ConnectionThread(socket,counter,serverGUI);
+                ConnectionThread thread = new ConnectionThread(socket, counter, serverGUI);
                 excutor.exec(thread);
 
 

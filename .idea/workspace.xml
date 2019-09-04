@@ -7,10 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/result.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JsonFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/JsonFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/InitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/InitClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/ConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ConnectionThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/DicMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/DicMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/ServerListening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerListening.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/ThreadExcutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ThreadExcutor.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +51,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -221,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567584515842</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="json file">
+      <created>1567589216465</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1567589216465</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +278,7 @@
     <MESSAGE value="add search delete word" />
     <MESSAGE value="client word count" />
     <MESSAGE value="jar" />
-    <option name="LAST_COMMIT_MESSAGE" value="jar" />
+    <MESSAGE value="json file" />
+    <option name="LAST_COMMIT_MESSAGE" value="json file" />
   </component>
 </project>

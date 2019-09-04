@@ -8,7 +8,6 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.URL;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
@@ -28,51 +27,52 @@ public class ServerGUI {
 
     public JScrollPane scrol;
 
-    private static int counter=0;
-    private ExecutorService pool=null;
+    private static int counter = 0;
+    private ExecutorService pool = null;
     public DicMap dicMap;
 
-    public ServerGUI(int port, String path){
-        this.port=port;
-        this.path=path;
-        dicMap=new DicMap();
+    public ServerGUI(int port, String path) {
+        this.port = port;
+        this.path = path;
+        dicMap = new DicMap();
         initialize();
     }
-    public void initialize(){
 
-        numClient=0;
-        numWords=0;
+    public void initialize() {
+
+        numClient = 0;
+        numWords = 0;
         frame = new JFrame("Dictionary Server");
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-       // URL url = getClass().getResource("server.png");
+        // URL url = getClass().getResource("server.png");
 
         //ImageIcon icon = new ImageIcon(url);
 
         JPanel panel = new JPanel();
-        panel.setBounds(0,0,400,400);
+        panel.setBounds(0, 0, 400, 400);
         frame.add(panel);
 
         placeComponents(panel);
 
-        JScrollPane scrol=new JScrollPane();
-        scrol.setBounds(400,0,400,400);
+        JScrollPane scrol = new JScrollPane();
+        scrol.setBounds(400, 0, 400, 400);
         //frame.add(scrol);
         placeCompo(scrol);
 
-        frame.addWindowListener(new WindowAdapter(){
-            public void windowClosing(WindowEvent e){
-                int i=JOptionPane.showConfirmDialog(null, "Sure to kill connection thread？", "exit", JOptionPane.YES_NO_OPTION);
-                if(i==JOptionPane.YES_OPTION){
+        frame.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                int i = JOptionPane.showConfirmDialog(null, "Sure to kill connection thread？", "exit", JOptionPane.YES_NO_OPTION);
+                if (i == JOptionPane.YES_OPTION) {
 
                     System.exit(0);
-                }}});
-
+                }
+            }
+        });
 
 
     }
-
 
 
     public void placeComponents(JPanel panel) {
@@ -80,31 +80,31 @@ public class ServerGUI {
         panel.setLayout(null);
 
 
-        JLabel lab_port=new JLabel(String.valueOf("port: "+port));
-        JLabel lab_path=new JLabel("path: "+path);
+        JLabel lab_port = new JLabel(String.valueOf("port: " + port));
+        JLabel lab_path = new JLabel("path: " + path);
 
-        text_client=new Label("total clients: "+numClient);
-        text_word=new Label("words: "+numClient);
+        text_client = new Label("total clients: " + numClient);
+        text_word = new Label("words: " + numWords);
 
         JButton btn_clr = new JButton("clear");
 
-        text_get=new JTextField(path);
-        text_log=new JTextArea();
-        text_ter=new JTextArea();
+        text_get = new JTextField(path);
+        text_log = new JTextArea();
+        text_ter = new JTextArea();
         text_log.setLineWrap(true);
         text_ter.setLineWrap(true);
 
 
-        lab_port.setBounds(40,20,100,20);
-        lab_path.setBounds(260,20,100,20);
+        lab_port.setBounds(40, 20, 100, 20);
+        lab_path.setBounds(260, 20, 100, 20);
         text_get.setBounds(30, 120, 80, 20);
         text_log.setBounds(30, 60, 300, 100);
         text_ter.setBounds(30, 210, 300, 100);
         text_client.setBounds(150, 330, 120, 20);
         text_word.setBounds(270, 330, 120, 20);
-        btn_clr.setBounds(30,330,60,20);
+        btn_clr.setBounds(30, 330, 60, 20);
 
-       // panel.add(text_get);
+        // panel.add(text_get);
         panel.add(text_log);
         panel.add(text_ter);
         panel.add(lab_port);
@@ -113,7 +113,7 @@ public class ServerGUI {
         panel.add(text_word);
         panel.add(text_client);
 
-        btn_clr.addActionListener(e->{
+        btn_clr.addActionListener(e -> {
 
             text_log.setText("");
             text_ter.setText("");
@@ -142,7 +142,8 @@ public class ServerGUI {
 
 
     }
-    public void printDicMap(){
+
+    public void printDicMap() {
 
         Iterator iter = dicMap.entrySet().iterator();
         while (iter.hasNext()) {
@@ -179,7 +180,7 @@ public class ServerGUI {
 
 
         ServerSocketFactory factory = ServerSocketFactory.getDefault();
-        try(ServerSocket serversocket = factory.createServerSocket(port);){
+        try (ServerSocket serversocket = factory.createServerSocket(port);) {
 
 
             System.out.println("Server start");
@@ -190,12 +191,12 @@ public class ServerGUI {
 
                 Socket clientsocket = serversocket.accept();
                 counter++;
-                text_log.append("client"+counter+" connected\n");
+                text_log.append("client" + counter + " connected\n");
 
                 numClient++;
-                text_client.setText("total clients: "+numClient);
+                text_client.setText("total clients: " + numClient);
 
-                ConnectionThread thread=new ConnectionThread(clientsocket,counter,this);
+                ConnectionThread thread = new ConnectionThread(clientsocket, counter, this);
                 excutor.exec(thread);
 
 

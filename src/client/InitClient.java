@@ -1,7 +1,5 @@
 package client;
 
-import java.awt.*;
-
 public class InitClient {
     public static void main(String[] args) {
 

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-class ThreadExcutor{
+class ThreadExcutor {
 
     //create
     private volatile boolean RUNNING = true;
@@ -25,16 +25,16 @@ class ThreadExcutor{
 
     boolean shutdown = false;
 
-    public ThreadExcutor(int poolSize){
+    public ThreadExcutor(int poolSize) {
         this.poolSize = poolSize;
         queue = new LinkedBlockingQueue<Runnable>(poolSize);
     }
 
     public void exec(Runnable runnable) {
         if (runnable == null) throw new NullPointerException();
-        if(coreSize < poolSize){
+        if (coreSize < poolSize) {
             addThread(runnable);
-        }else{
+        } else {
             //System.out.println("offer" +  runnable.toString() + "   " + queue.size());
             try {
                 queue.put(runnable);
@@ -44,15 +44,15 @@ class ThreadExcutor{
         }
     }
 
-    public void addThread(Runnable runnable){
-        coreSize ++;
+    public void addThread(Runnable runnable) {
+        coreSize++;
         Worker worker = new Worker(runnable);
         workers.add(worker);
         Thread t = new Thread(worker);
         threadList.add(t);
         try {
             t.start();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -60,24 +60,25 @@ class ThreadExcutor{
 
     public void shutdown() {
         RUNNING = false;
-        if(!workers.isEmpty()){
-            for (Worker worker : workers){
+        if (!workers.isEmpty()) {
+            for (Worker worker : workers) {
                 worker.interruptIfIdle();
             }
         }
         shutdown = true;
         Thread.currentThread().interrupt();
     }
-    class  Worker implements Runnable{
 
-        public Worker(Runnable runnable){
+    class Worker implements Runnable {
+
+        public Worker(Runnable runnable) {
             queue.offer(runnable);
         }
 
         @Override
         public void run() {
-            while (true && RUNNING){
-                if(shutdown == true){
+            while (true && RUNNING) {
+                if (shutdown == true) {
                     Thread.interrupted();
                 }
                 Runnable task = null;
@@ -95,7 +96,7 @@ class ThreadExcutor{
         }
 
         public void interruptIfIdle() {
-            for (Thread thread :threadList) {
+            for (Thread thread : threadList) {
                 System.out.println(thread.getName() + " interrupt");
                 thread.interrupt();
             }
