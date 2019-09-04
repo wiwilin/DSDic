@@ -1,3 +1,5 @@
+package server;
+
 import javax.imageio.ImageIO;
 import javax.net.ServerSocketFactory;
 import javax.swing.*;
@@ -49,7 +51,7 @@ public class ServerGUI {
         frame.setSize(800, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        URL url = getClass().getResource("image/server.png");
+        URL url = getClass().getResource("server.png");
 
         ImageIcon icon = new ImageIcon(url);
 
@@ -87,7 +89,7 @@ public class ServerGUI {
         JLabel lab_path=new JLabel("path: "+path);
 
         text_client=new Label("total clients: "+numClient);
-        text_word=new Label("total words: "+numClient);
+        text_word=new Label("words: "+numClient);
 
         JButton btn_clr = new JButton("clear");
 
@@ -103,8 +105,8 @@ public class ServerGUI {
         text_get.setBounds(30, 120, 80, 20);
         text_log.setBounds(30, 60, 300, 100);
         text_ter.setBounds(30, 210, 300, 100);
-        text_client.setBounds(150, 330, 60, 20);
-        text_word.setBounds(250, 330, 60, 20);
+        text_client.setBounds(150, 330, 120, 20);
+        text_word.setBounds(270, 330, 120, 20);
         btn_clr.setBounds(30,330,60,20);
 
        // panel.add(text_get);

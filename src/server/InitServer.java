@@ -1,3 +1,5 @@
+package server;
+
 import java.awt.*;
 
 public class InitServer {
@@ -19,7 +21,8 @@ public class InitServer {
 
                 ServerGUI serverGUI = new ServerGUI(port,path);
                 serverGUI.frame.setVisible(true);
-               // ServerListening serverListening=new ServerListening(serverGUI);
+
+
                 serverGUI.listen();
 
 

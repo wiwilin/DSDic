@@ -1,12 +1,12 @@
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+package server;
+
+import server.ServerGUI;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
 
 public class ConnectionThread implements Runnable {
     private Socket socket = null;

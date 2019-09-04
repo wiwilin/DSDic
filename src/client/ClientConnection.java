@@ -1,15 +1,17 @@
-import javax.swing.*;
+package client;
+
+import client.ClientGUI;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
 
 public class ClientConnection {
     private static String ip = "localhost";
     private static int port = 1050;
-    private  ClientGUI clientGUI;
+    private ClientGUI clientGUI;
     public  DataInputStream input;
     public DataOutputStream output;
     String message="";

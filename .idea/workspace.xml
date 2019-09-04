@@ -2,13 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/DS_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/ServerListening.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ServerGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerListening.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/ServerListening.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerListening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerListening.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ClientGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ConnectionThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/DicMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/InitClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/InitServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ServerListening.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ThreadExcutor$Worker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/ThreadExcutor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ConnectionThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DicMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/DicMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/InitClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InitServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/InitServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerListening.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThreadExcutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ThreadExcutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/Client.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/Server.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +59,17 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/client" />
+      <recent name="$PROJECT_DIR$/src/server" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -61,14 +85,14 @@
   </component>
   <component name="RunManager" selected="Application.InitClient">
     <configuration name="InitClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="InitClient" />
+      <option name="MAIN_CLASS_NAME" value="client.InitClient" />
       <module name="DS" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="InitServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="InitServer" />
+      <option name="MAIN_CLASS_NAME" value="server.InitServer" />
       <module name="DS" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -183,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567572322342</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="client word count">
+      <created>1567574823625</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1567574823625</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +254,7 @@
     <MESSAGE value="okkk" />
     <MESSAGE value="exit dialog" />
     <MESSAGE value="add search delete word" />
-    <option name="LAST_COMMIT_MESSAGE" value="add search delete word" />
+    <MESSAGE value="client word count" />
+    <option name="LAST_COMMIT_MESSAGE" value="client word count" />
   </component>
 </project>

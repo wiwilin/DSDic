@@ -1,15 +1,20 @@
+package server;
+
+import server.ConnectionThread;
+import server.DicMap;
+import server.ServerGUI;
+import server.ThreadExcutor;
 
 import javax.net.ServerSocketFactory;
 import java.io.IOException;
 import java.net.*;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /*Server listening act as a thread manager*/
 public class ServerListening {
     private static int port;
     private String path;
-    private static int counter;
+    public static int counter;
     private ExecutorService pool=null;
     public ServerGUI serverGUI;
     public static int numClient;
