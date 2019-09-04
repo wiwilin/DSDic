@@ -83,6 +83,7 @@ public class ClientConnection {
         switch (clientGUI.command){
         case "search":
             String[] str=message.split("&");
+            clientGUI.text_info.setText("");
             for(int i=1;i<str.length;i++)
             {
                 clientGUI.text_info.append("explanation"+Integer.toString(i)+": "+str[i]+"\n");

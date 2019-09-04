@@ -69,18 +69,7 @@ public class DicMap extends HashMap{
         }catch (Exception e){}
 
     }
-    public void printDicMap(){
-        System.out.println("\n");
-        Iterator iter = dicMap.entrySet().iterator();
-        while (iter.hasNext()) {
-            Map.Entry entry = (Map.Entry) iter.next();
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            System.out.println(key + ":" + value);
 
-        }
-
-    }
     public void printfile(){
 
     }

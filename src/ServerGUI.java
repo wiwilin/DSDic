@@ -9,6 +9,10 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -17,6 +21,7 @@ public class ServerGUI {
     public JTextField text_get;
     public JTextArea text_log;
     public JTextArea text_ter;
+    public JTextArea text_file;
     private int port;
     private static String path;
 
@@ -100,19 +105,59 @@ public class ServerGUI {
 
             text_log.setText("");
             text_ter.setText("");
-            scrol.setVisible(false);
 
+            printDicMap();
+            Iterator iter = dicMap.entrySet().iterator();
+            while (iter.hasNext()) {
+                Map.Entry entry = (Map.Entry) iter.next();
+                Object key = entry.getKey();
+                Object value = entry.getValue();
+                text_file.append(key + ":" + value);
+            }
+
+            text_file.append("df");
         });
+
 
     }
 
     public void placeCompo(JScrollPane panel) {
 
         panel.setLayout(null);
-        JTextArea text_file = new JTextArea("o");
+        text_file = new JTextArea("o");
         panel.add(text_file);
         text_file.setBounds(450, 0, 300, 300);
 
+
+    }
+    public void printDicMap(){
+
+        Iterator iter = dicMap.entrySet().iterator();
+        while (iter.hasNext()) {
+            Map.Entry entry = (Map.Entry) iter.next();
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            text_file.append(key + ":" + value);
+            text_file.append("j");
+        }
+
+        /*
+        for (TypeKey name: dicMap.keySet()){
+
+            String key =name.toString();
+            ArrayList value = dicMap.get(name).toString();
+            System.out.println(key + " " + value);
+
+
+        }*/
+        /*
+        Set<String> keys=dicMap.keySet();
+        Iterator<String> iter=keys.iterator();
+        while(iter.hasNext())
+        {
+            text_file.append(iter.next().getKey());
+        }
+         */
 
     }
 
