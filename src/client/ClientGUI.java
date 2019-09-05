@@ -25,7 +25,6 @@ public class ClientGUI {
     public boolean send;
     public static int numClient;
     public static int numWords;
-    private JScrollPane sp;
 
     public ClientGUI() {
         initialize();
@@ -132,8 +131,8 @@ public class ClientGUI {
         panel.add(text_info);
         panel.add(con_info);
 
-        text_explan.setEditable(false);
-        text_explan.setBackground(Color.LIGHT_GRAY);
+        //text_explan.setEditable(false);
+        //text_explan.setBackground(Color.LIGHT_GRAY);
 
 
     }
@@ -142,7 +141,7 @@ public class ClientGUI {
         String str = text_voca.getText();
         return text_voca.getText();
     }
-
+/*
     private JScrollPane getJTextArea() {
         if (con_info == null) {
             con_info = new JTextArea();
@@ -154,5 +153,5 @@ public class ClientGUI {
         //sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         return sp;
     }
-
+*/
 }
