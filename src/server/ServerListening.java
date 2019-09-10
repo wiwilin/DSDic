@@ -53,9 +53,11 @@ public class ServerListening {
 
                 ConnectionThread thread = new ConnectionThread(socket, counter, serverGUI);
                 excutor.exec(thread);
-                if(isConnected(socket)==false)
+                if(isConnected(socket)==false||socket.isConnected()==false)
                 {     serverGUI.text_log.append("Connection"+ counter +"killed");
-                       numClient--;}
+                       numClient--;
+                       serverGUI.text_client.setText("clients count: " + numClient);
+                }
 
 
             }

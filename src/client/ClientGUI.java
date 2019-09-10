@@ -49,12 +49,11 @@ public class ClientGUI {
             public void windowClosing(WindowEvent e) {
                 int i = JOptionPane.showConfirmDialog(null, "Sure to kill connection thread？", "exit", JOptionPane.YES_NO_OPTION);
                 if (i == JOptionPane.YES_OPTION) {
-                    /*
+
                     command = "kill";
                     vocabulary = text_voca.getText();
                     explanation = text_explan.getText();
                     send = true;
-                    */
                     close=true;
                     //System.exit(0);
                 }

@@ -221,17 +221,19 @@ public class ServerGUI {
 
                 Socket clientsocket = serversocket.accept();
                 counter++;
-                text_log.append("client" + counter + " connected\n");
+                text_log.append("client" + counter + " is connected\n");
 
                 numClient++;
                 text_client.setText("clients count: " + numClient);
 
                 ConnectionThread thread = new ConnectionThread(clientsocket, counter, this);
                 excutor.exec(thread);
-                if(isConnected(clientsocket)==false)
+                if(isConnected(clientsocket)==false||clientsocket.isConnected()==false)
                 {
-                    text_log.append("Connection"+ counter +"killed");
-                    numClient--;}
+                    text_log.append("Client "+ counter +" is disconnected");
+                    numClient--;
+                    text_client.setText("clients count: " + numClient);
+                }
 
             }
 
@@ -249,5 +251,6 @@ public class ServerGUI {
             return false;
         }
     }
+
 
 }

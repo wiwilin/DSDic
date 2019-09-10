@@ -6,17 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="k">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ClientServer_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/DS_jar.xml" beforeDir="false" />
+    <list default="true" id="6c165af8-9df0-45c4-bba2-bda095c38d08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dic.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dic.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/ClientGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/InitClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/InitClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/ConnectionThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ConnectionThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/DicMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/DicMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/InitServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/InitServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/ServerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/ServerListening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ServerListening.java" afterDir="false" />
     </list>
@@ -150,7 +145,7 @@
       <workItem from="1567658247277" duration="12000" />
       <workItem from="1567658279433" duration="157000" />
       <workItem from="1567658458880" duration="4378000" />
-      <workItem from="1568099020685" duration="16155000" />
+      <workItem from="1568099020685" duration="23267000" />
     </task>
     <task id="LOCAL-00001" summary="GUI changed">
       <created>1566731184371</created>
@@ -313,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567654742362</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="modified">
+      <created>1568127324650</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1568127324650</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +366,8 @@
     <MESSAGE value="UML" />
     <MESSAGE value="05" />
     <MESSAGE value="final" />
-    <option name="LAST_COMMIT_MESSAGE" value="final" />
+    <MESSAGE value="modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified" />
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>

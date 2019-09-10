@@ -43,7 +43,10 @@ public class ClientConnection {
             output = new DataOutputStream(socket.getOutputStream());
 
             boolean k = false;
-            while (clientGUI.close==false) {
+            boolean n=false;
+            while (true) {
+                if(clientGUI.close==true)
+                    n=true;
                 //clientGUI.con_info.append("1");
                 while (clientGUI.send == true && k == false && sendData()) {
                     clientGUI.con_info.setText("Request sent");
@@ -64,10 +67,12 @@ public class ClientConnection {
                     handleOutput(message);
                     // clientGUI.text_info.append("received:"+message);
                     k = false;
-                }
+            }
+
+                if(n==true)
+                    break;
 
             }
-            System.out.println("close");
             socket.close();
             clientGUI.exit();
 

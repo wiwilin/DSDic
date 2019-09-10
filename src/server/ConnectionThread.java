@@ -39,7 +39,8 @@ public class ConnectionThread implements Runnable {
             output = new DataOutputStream(socket.getOutputStream());
 
 
-            while (socket.isConnected()==true) {
+            while (socket.isConnected()==true&&isConnected(socket)==true) {
+
 
                 while (k == true && (str = input.readUTF()) != "") {
 
@@ -63,6 +64,9 @@ public class ConnectionThread implements Runnable {
 
                 serverGUI.text_log.append("Connection"+ counter +"killed");
                 serverGUI.numClient--;
+                serverGUI.text_client.setText("clients count: " + serverGUI.numClient);
+
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -74,7 +78,13 @@ public class ConnectionThread implements Runnable {
 
         String[] star = com.split(",");
         String command = star[0];
-        String word = star[1];
+        String word;
+        try {
+            word = star[1];
+        }catch (Exception e){
+            word="";
+        }
+
         String meaning;
         try {
             meaning = star[2];
@@ -82,7 +92,7 @@ public class ConnectionThread implements Runnable {
             meaning = "";
         }
         //System.out.println("command:" + command + "word:" + word + "meaning" + meaning);
-        String msg = command + " " + meaning + " to " + word;
+        String msg = command + " " + meaning + " -> " + word;
         serverGUI.text_ter.append("Request from Client " + counter + " : " + msg + "\n");
         //int size=dicMap.values().size();
         //serverGUI.text_word.setText("words: "+String.valueOf(size+2));
@@ -105,7 +115,9 @@ public class ConnectionThread implements Runnable {
                     serverGUI.text_word.setText("words count: " + serverGUI.numWords);
                     return "deleted";
                 case "kill":
-                    serverGUI.text_log.append("Connection"+ counter +"killed");
+                    serverGUI.text_log.append("Client "+ counter +" is disconnected");
+                    serverGUI.numClient--;
+                    serverGUI.text_client.setText("clients count: " + serverGUI.numClient);
                     return "kill";
                 default:
                     throw new IllegalStateException("Unexpected value: " + star[0]);
@@ -116,7 +128,7 @@ public class ConnectionThread implements Runnable {
 
     }
 
-    public boolean isConnected() {
+    public boolean isConnected(Socket socket) {
         try {
             socket.sendUrgentData(0xFF);
             return true;
@@ -140,5 +152,6 @@ public class ConnectionThread implements Runnable {
         return str;
 
     }
+
 }
 
