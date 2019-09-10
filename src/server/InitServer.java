@@ -15,7 +15,11 @@ public class InitServer {
                 port = Integer.parseInt(args[0]);
             } else
                 port = 1050;
-            String path = "Dic.json";
+            String path;
+            if(args.length>1)
+                path = args[1];
+            else
+                path = "Dic.json";
             if (args.length == 2) {
                 System.out.println("port changed to " + port + ", path changed to " + path);
                 port = Integer.parseInt(args[0]);

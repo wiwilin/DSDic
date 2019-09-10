@@ -12,14 +12,16 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class ClientConnection {
-    private static String ip = "localhost";
-    private static int port = 1050;
+    private static String ip ;
+    private static int port;
     private ClientGUI clientGUI;
     public DataInputStream input;
     public DataOutputStream output;
     String message = "";
 
-    public ClientConnection() throws IOException {
+    public ClientConnection(String ip,int port) throws IOException {
+        this.ip= ip;
+        this.port=port;
         connect();
     }
 
@@ -41,7 +43,7 @@ public class ClientConnection {
             output = new DataOutputStream(socket.getOutputStream());
 
             boolean k = false;
-            while (true) {
+            while (clientGUI.close==false) {
                 //clientGUI.con_info.append("1");
                 while (clientGUI.send == true && k == false && sendData()) {
                     clientGUI.con_info.setText("Request sent");
@@ -65,7 +67,9 @@ public class ClientConnection {
                 }
 
             }
-
+            System.out.println("close");
+            socket.close();
+            clientGUI.exit();
 
         } catch (UnknownHostException e) {
             e.printStackTrace();
@@ -94,6 +98,8 @@ public class ClientConnection {
                     clientGUI.text_info.append("explanation" + Integer.toString(i) + ": " + str[i] + "\n");
                 }
                 break;
+            case "kill":
+                clientGUI.exit();
             default:
                 ;
         }

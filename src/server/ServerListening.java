@@ -19,7 +19,7 @@ public class ServerListening {
     private ExecutorService pool = null;
     public ServerGUI serverGUI;
     public static int numClient;
-    public static int numWords = 0;
+    public static int numWords;
     public DicMap dicMap;
 
     public ServerListening(ServerGUI serverGUI) {
@@ -53,6 +53,9 @@ public class ServerListening {
 
                 ConnectionThread thread = new ConnectionThread(socket, counter, serverGUI);
                 excutor.exec(thread);
+                if(isConnected(socket)==false)
+                {     serverGUI.text_log.append("Connection"+ counter +"killed");
+                       numClient--;}
 
 
             }
@@ -61,4 +64,14 @@ public class ServerListening {
             pool.shutdown();
         }
     }
+
+    public boolean isConnected(Socket socket) {
+        try {
+            socket.sendUrgentData(0xFF);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 }

@@ -39,7 +39,7 @@ public class ConnectionThread implements Runnable {
             output = new DataOutputStream(socket.getOutputStream());
 
 
-            while (true) {
+            while (socket.isConnected()==true) {
 
                 while (k == true && (str = input.readUTF()) != "") {
 
@@ -57,10 +57,12 @@ public class ConnectionThread implements Runnable {
                     k = true;
                     //serverGUI.text_ter.append("down");
                     // System.out.println(dicMap.searchWord("a"));}
-
                 }
+
             }
 
+                serverGUI.text_log.append("Connection"+ counter +"killed");
+                serverGUI.numClient--;
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -82,21 +84,28 @@ public class ConnectionThread implements Runnable {
         //System.out.println("command:" + command + "word:" + word + "meaning" + meaning);
         String msg = command + " " + meaning + " to " + word;
         serverGUI.text_ter.append("Request from Client " + counter + " : " + msg + "\n");
-        int size=dicMap.values().size();
-        serverGUI.text_word.setText("words: "+String.valueOf(size+2));
+        //int size=dicMap.values().size();
+        //serverGUI.text_word.setText("words: "+String.valueOf(size+2));
         try {
             switch (command) {
                 case "search":
                     String meanings = writeArrayList(dicMap.searchWord(word));
+                    serverGUI.numWords=dicMap.dicMap.size();
+                    serverGUI.text_word.setText("words count: " + serverGUI.numWords);
                     return meanings;
                 case "add":
                     dicMap.addMeaning(word, meaning);
                     dicMap.printfile();
+                    serverGUI.numWords=dicMap.dicMap.size();
+                    serverGUI.text_word.setText("words count: " + serverGUI.numWords);
                     return "added";
                 case "delete":
                     dicMap.deleteWord(word);
+                    serverGUI.numWords=dicMap.dicMap.size();
+                    serverGUI.text_word.setText("words count: " + serverGUI.numWords);
                     return "deleted";
                 case "kill":
+                    serverGUI.text_log.append("Connection"+ counter +"killed");
                     return "kill";
                 default:
                     throw new IllegalStateException("Unexpected value: " + star[0]);
@@ -107,7 +116,14 @@ public class ConnectionThread implements Runnable {
 
     }
 
-
+    public boolean isConnected() {
+        try {
+            socket.sendUrgentData(0xFF);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
     public String writeArrayList(ArrayList list) {
 
         String str = "";

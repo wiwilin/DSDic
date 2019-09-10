@@ -5,10 +5,14 @@ package server;
 //id:wlin8
 //
 
+import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,13 +20,16 @@ import java.util.Map;
 
 public class DicMap extends HashMap {
     public static HashMap<String, ArrayList> dicMap;
+    String path;
 
-    public DicMap() {
+
+    public DicMap(String path) {
+        this.path=path;
         dicMap = new HashMap<String, ArrayList>();
         ArrayList list = new ArrayList<String>();
-        list.add("A value");
-        list.add("Another value");
-        dicMap.put("key", list);
+        //list.add("A value");
+        //list.add("Another value");
+        //dicMap.put("key", list);
 
 
     }
@@ -58,7 +65,7 @@ public class DicMap extends HashMap {
     }
 
     public ArrayList searchWord(String word) throws Exception {
-        System.out.println("mapsize"+dicMap.size());
+       // System.out.println("mapsize"+dicMap.size());
         ArrayList meanings = new ArrayList<String>();
         if (!dicMap.containsKey(word))
             throw new Exception(word + " is not found, please add word first");
@@ -90,7 +97,7 @@ public class DicMap extends HashMap {
     public void printfile() {
         ObjectMapper mapper = new ObjectMapper();
 
-        File file = new File("Dic.json");
+        File file = new File(path);
         try {
             mapper.writeValue(file, dicMap);
         } catch (Exception e) {
@@ -98,20 +105,33 @@ public class DicMap extends HashMap {
         }
     }
 
-    public void readfile() {
+    public void readfile() throws IOException {
+        /*
+        FileInputStream fileInput = new FileInputStream(new File(path));
+        byte[] bs = new byte[10];
+        int len = -1;
+        StringBuffer sb = new StringBuffer();
+        while ((len = fileInput.read(bs)) != -1) {
+            String str = new String(bs, 0, len);
+            sb.append(str);
+        }
+        fileInput.close();
+
+        String s = sb.toString();
+
+        JSONObject json = new JSONObject(s);
+        */
         ObjectMapper mapper = new ObjectMapper();
-
+        File file = new File(path);
         try {
-            Map<String, Object> newMap = mapper.readValue(new File(
-                    "Dic.json"), new TypeReference<Map<String, Object>>() {
-            });
-
-            //System.out.println("Key : " + newMap.get("key"));
-
+            dicMap = mapper.readValue(file,new TypeReference<Map<String,ArrayList>>(){});
+            System.out.println("a : " + dicMap.get("a"));
+            System.out.println( dicMap.size());
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+
 
     }
 }

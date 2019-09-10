@@ -7,10 +7,20 @@ package client;
 
 public class InitClient {
     public static void main(String[] args) {
+        String ip;
+        int port;
 
         try {
+            if (args.length > 1) {
+                port = Integer.parseInt(args[1]);
+            } else
+                port = 1050;
 
-            ClientConnection client = new ClientConnection();
+            if(args.length>0)
+                ip = args[0];
+            else
+                ip="localhost";
+            ClientConnection client = new ClientConnection(ip,port);
 
 
         } catch (Exception e) {

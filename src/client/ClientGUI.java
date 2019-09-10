@@ -23,6 +23,7 @@ public class ClientGUI {
     public String vocabulary;
     public String explanation;
     public boolean send;
+    public boolean close=false;
     public static int numClient;
     public static int numWords;
 
@@ -48,11 +49,14 @@ public class ClientGUI {
             public void windowClosing(WindowEvent e) {
                 int i = JOptionPane.showConfirmDialog(null, "Sure to kill connection thread？", "exit", JOptionPane.YES_NO_OPTION);
                 if (i == JOptionPane.YES_OPTION) {
+                    /*
                     command = "kill";
                     vocabulary = text_voca.getText();
                     explanation = text_explan.getText();
                     send = true;
-                    System.exit(0);
+                    */
+                    close=true;
+                    //System.exit(0);
                 }
                 else
                     return;
@@ -106,7 +110,7 @@ public class ClientGUI {
         text_info.setWrapStyleWord(true);
 
 
-        lab_ip.setBounds(278, 20, 80, 20);
+        lab_ip.setBounds(278, 20, 150, 20);
         lab_port.setBounds(40, 20, 80, 20);
         lab_voca.setBounds(40, 55, 80, 20);
         lab_explan.setBounds(40, 100, 80, 20);
@@ -140,6 +144,10 @@ public class ClientGUI {
     public String getText() {
         String str = text_voca.getText();
         return text_voca.getText();
+    }
+
+    public void exit() {
+        System.exit(0);
     }
 /*
     private JScrollPane getJTextArea() {

@@ -27,8 +27,8 @@ public class ServerGUI {
     public static int numWords;
     public Label text_client;
     public Label text_word;
-    private int port;
-    private static String path;
+    public int port;
+    public static String path;
 
     public JScrollPane scrol;
 
@@ -39,7 +39,7 @@ public class ServerGUI {
     public ServerGUI(int port, String path) {
         this.port = port;
         this.path = path;
-        dicMap = new DicMap();
+        dicMap = new DicMap(path);
         initialize();
     }
 
@@ -48,7 +48,7 @@ public class ServerGUI {
         numClient = 0;
         numWords = 0;
         frame = new JFrame("Dictionary Server");
-        frame.setSize(420, 400);
+        frame.setSize(420, 800);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         // URL url = getClass().getResource("server.png");
@@ -56,7 +56,7 @@ public class ServerGUI {
         //ImageIcon icon = new ImageIcon(url);
 
         JPanel panel = new JPanel();
-        panel.setBounds(0, 0, 420, 400);
+        panel.setBounds(0, 0, 420, 800);
         frame.add(panel);
 
         placeComponents(panel);
@@ -88,8 +88,8 @@ public class ServerGUI {
         JLabel lab_port = new JLabel(String.valueOf("port: " + port));
         JLabel lab_path = new JLabel("path: " + path);
 
-        text_client = new Label("clients count: " + 2);
-        text_word = new Label("words count: " + 153);
+        text_client = new Label("clients count: " + numClient);
+        text_word = new Label("words count: " + numWords);
 
         JButton btn_clr = new JButton("clear");
         JButton btn_save = new JButton("save");
@@ -105,13 +105,13 @@ public class ServerGUI {
         lab_port.setBounds(35, 20, 100, 20);
         lab_path.setBounds(288, 20, 100, 20);
         text_get.setBounds(30, 120, 80, 20);
-        text_log.setBounds(35, 60, 335, 105);
-        text_ter.setBounds(35, 210, 335, 105);
-        text_client.setBounds(276, 180, 120, 20);
-        text_word.setBounds(280, 330, 120, 20);
-        btn_clr.setBounds(40, 180, 60, 20);
-        btn_save.setBounds(40, 330, 60, 20);
-        btn_load.setBounds(140, 330, 60, 20);
+        text_log.setBounds(35, 60, 335, 200);
+        text_ter.setBounds(35, 310, 335, 400);
+        text_client.setBounds(276, 280, 120, 20);
+        text_word.setBounds(280, 730, 120, 20);
+        btn_clr.setBounds(40, 280, 60, 20);
+        btn_save.setBounds(40, 730, 60, 20);
+        btn_load.setBounds(140, 730, 60, 20);
 
         // panel.add(text_get);
         panel.add(text_log);
@@ -141,7 +141,23 @@ public class ServerGUI {
             text_file.append("df");
         });
 
+        btn_save.addActionListener(e -> {
+            dicMap.printfile();
+            text_log.append("File saved!\n");
 
+        });
+        btn_load.addActionListener(e -> {
+            try {
+                dicMap.readfile();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            text_log.append("File loaded!\n");
+            numWords=dicMap.dicMap.size();
+            System.out.println(numWords);
+            text_word.setText("words count: " + numWords);
+
+        });
     }
 
     public void placeCompo(JScrollPane panel) {
@@ -187,6 +203,9 @@ public class ServerGUI {
 
     public void listen() {
 
+        numWords=dicMap.dicMap.size();
+        text_word.setText("words count: " + numWords);
+
         ThreadExcutor excutor = new ThreadExcutor(10);
 
 
@@ -209,7 +228,10 @@ public class ServerGUI {
 
                 ConnectionThread thread = new ConnectionThread(clientsocket, counter, this);
                 excutor.exec(thread);
-
+                if(isConnected(clientsocket)==false)
+                {
+                    text_log.append("Connection"+ counter +"killed");
+                    numClient--;}
 
             }
 
@@ -217,6 +239,14 @@ public class ServerGUI {
         } catch (IOException e) {
             e.printStackTrace();
             pool.shutdown();
+        }
+    }
+    public boolean isConnected(Socket socket) {
+        try {
+            socket.sendUrgentData(0xFF);
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 
